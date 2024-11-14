@@ -1,42 +1,243 @@
-import React from 'react'
-import { Label } from './ui/label'
-import { Input } from './ui/input'
-import { Button } from './ui/button'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import axios from "axios";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-export default function SignupPage() {
+export default function SignupPage({ open, setOpen }) {
+  const [page, setPage] = useState(1);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    companyName: "",
+    companyUrl: "",
+    services: [],
+    password: "",
+    confirmPassword: "",
+    termsAccepted: false,
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const nextPage = () => setPage((prev) => prev + 1);
+  const prevPage = () => setPage((prev) => prev - 1);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("/your-api-endpoint", formData);
+      console.log(res);
+      alert("Form submitted successfully!");
+      setPage(1);
+      setFormData("");
+      setOpen(false);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Form submission failed.");
+    }
+  };
+
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[url('https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWl8ZW58MHx8MHx8fDA%3D')] bg-no-repeat bg-cover w-auto bg-center">
-  <div className="bg-transparent rounded-lg shadow-lg w-full max-w-md p-8 backdrop-blur-lg">
-    <h1 className="text-3xl font-semibold text-center text-black mb-6">Sign Up</h1>
-    <form>
-      <div className="mb-4">
-        <Label htmlFor="name" className="block text-gray-700 font-medium mb-1">Username</Label>
-        <Input type="text" id="name" placeholder="Enter your name" className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 focus:outline-none focus:border-blue-500"/>
-      </div>
-      <div className="mb-4">
-        <Label htmlFor="email" className="block text-gray-700 font-medium mb-1">Email</Label>
-        <Input type="email" id="email" placeholder="Enter your email" className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 focus:outline-none focus:border-blue-500"/>
-      </div>
-      <div className="mb-4">
-        <Label htmlFor="phone" className="block text-gray-700 font-medium mb-1">Phone</Label>
-        <Input type="text" id="phone" placeholder="Enter your number" className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 focus:outline-none focus:border-blue-500"/>
-      </div>
-      <div className="mb-4">
-        <Label htmlFor="password" className="block text-gray-700 font-medium mb-1">Password</Label>
-        <Input type="password" id="password" placeholder="Enter your password" className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 focus:outline-none focus:border-blue-500"/>
-      </div>
-      <div className="mb-6">
-        <Label htmlFor="confirm-password" className="block text-gray-700 font-medium mb-1">Confirm Password</Label>
-        <Input type="password" id="confirm-password" placeholder="Confirm password" className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 focus:outline-none focus:border-blue-500"/>
-      </div>
-      <Button className="w-full py-2 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-200">Submit</Button>
-    </form>
-    <div className='text-center pt-3'>
-    <p>Already have an account <Link to={"/login"} className="text-blue-500 hover:underline">login</Link></p>
-  </div>
-  </div>
-</div>
+    <>
+      {open ? (
+        <Container fluid className="position-relative top-0">
+          <Row>
+            <Col md={6} className="bg-light p-4">
+              <h2>With your new Account, you get:</h2>
+              <ul>
+                <li>Access to 3000+ browsers, OS, & devices</li>
+                <li>70% faster test execution</li>
+                <li>AI-powered test intelligence</li>
+              </ul>
+              <p>Trusted by 2 Million+ users globally at:</p>
+              <div className="d-flex"></div>
+            </Col>
 
-  )
+            <Col md={6} className="p-4">
+              <h3 className="mb-3">Get started for free</h3>
+              <form onSubmit={handleSubmit}>
+  {page === 1 && (
+    <>
+      <div className="mb-3">
+        <label htmlFor="name" className="form-label">Name</label>
+        <input
+          type="text"
+          className="form-control"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange}
+          required
+          placeholder="Enter your name"
+        />
+      </div>
+
+      <div className="mb-3">
+        <label htmlFor="email" className="form-label">Email</label>
+        <input
+          type="email"
+          className="form-control"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange}
+          required
+          placeholder="Enter your email"
+        />
+      </div>
+
+      <div className="mb-3">
+        <label htmlFor="phone" className="form-label">Phone Number</label>
+        <input
+          type="tel"
+          className="form-control"
+          id="phone"
+          name="phone"
+          value={formData.phone}
+          onChange={handleInputChange}
+          required
+          placeholder="Enter your phone number"
+        />
+      </div>
+
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={nextPage}
+        disabled={!formData.name || !formData.email}
+      >
+        Next
+      </button>
+    </>
+  )}
+
+  {page === 2 && (
+    <>
+      <div className="mb-3">
+        <label htmlFor="companyName" className="form-label">Company Name</label>
+        <input
+          type="text"
+          className="form-control"
+          id="companyName"
+          name="companyName"
+          value={formData.companyName}
+          onChange={handleInputChange}
+          required
+          placeholder="Enter your company name"
+        />
+      </div>
+
+      <div className="mb-3">
+        <label htmlFor="companyUrl" className="form-label">Company URL</label>
+        <input
+          type="url"
+          className="form-control"
+          id="companyUrl"
+          name="companyUrl"
+          value={formData.companyUrl}
+          onChange={handleInputChange}
+          required
+          placeholder="Enter your company URL"
+        />
+      </div>
+
+      <div className="mb-3">
+        <label htmlFor="services" className="form-label">Service</label>
+        <select
+          className="form-select"
+          id="services"
+          name="services"
+          value={formData.services}
+          onChange={handleInputChange}
+          required
+        >
+          <option value="">Select a service</option>
+          <option value="Service1">Service 1</option>
+          <option value="Service2">Service 2</option>
+          <option value="Service3">Service 3</option>
+        </select>
+      </div>
+
+      <div className="d-flex justify-content-between">
+        <button type="button" className="btn btn-secondary" onClick={prevPage}>
+          Prev
+        </button>
+        <button type="button" className="btn btn-primary" onClick={nextPage}>
+          Next
+        </button>
+      </div>
+    </>
+  )}
+
+  {page === 3 && (
+    <>
+      <div className="mb-3">
+        <label htmlFor="password" className="form-label">Password</label>
+        <input
+          type="password"
+          className="form-control"
+          id="password"
+          name="password"
+          value={formData.password}
+          onChange={handleInputChange}
+          required
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <div className="mb-3">
+        <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+        <input
+          type="password"
+          className="form-control"
+          id="confirmPassword"
+          name="confirmPassword"
+          value={formData.confirmPassword}
+          onChange={handleInputChange}
+          required
+          placeholder="Confirm your password"
+        />
+      </div>
+
+      <div className="mb-3 form-check">
+        <input
+          type="checkbox"
+          className="form-check-input"
+          id="termsAccepted"
+          name="termsAccepted"
+          checked={formData.termsAccepted}
+          onChange={handleInputChange}
+          required
+        />
+        <label htmlFor="termsAccepted" className="form-check-label">
+          I agree to the Terms and Policy <Link to={"/termsandPolicy"}>Terms and Policy</Link>
+        </label>
+      </div>
+
+      <div className="d-flex justify-content-between">
+        <button type="button" className="btn btn-secondary" onClick={prevPage}>
+          Prev
+        </button>
+        <button type="submit" className="btn btn-success">
+          Submit
+        </button>
+      </div>
+    </>
+  )}
+</form>
+
+            </Col>
+          </Row>
+        </Container>
+      ) : (
+        ""
+      )}
+    </>
+  );
 }

@@ -4,10 +4,10 @@ import Contact from './components/Pages/Contact'
 import ErrorPage from './components/ErrorPage'
 import Features from './components/Pages/Features'
 import Home from './components/Pages/Home'
-import LoginPage from './components/LoginPage'
 import MainLayout from './components/MainLayout'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import SignupPage from './components/SignupPage'
+
+import TermsPolicy from './components/TermsPolicy'
 
 const browserRouter = createBrowserRouter([
   {
@@ -16,30 +16,26 @@ const browserRouter = createBrowserRouter([
     element: <MainLayout/>,
     children: [
       {
-        path: "home",
+        path: "/home",
         element: <Home/>
       },
       {
-        path: "about",
+        path: "/about",
         element: <About/>
       },
       {
-        path: "features",
+        path: "/features",
         element: <Features/>
       },
       {
-        path: "contact",
+        path: "/contact",
         element: <Contact/>
       }
     ]
   },
   {
-    path: "/login",
-    element: <LoginPage/>
-  },
-  {
-    path: "/register",
-    element: <SignupPage/>
+    path: "/termsandPolicy",
+    element: <TermsPolicy/>
   }
 
  ])
@@ -48,7 +44,9 @@ function App() {
 
   return (
     <>
+  
    <RouterProvider router={browserRouter}/>
+  
     </>
   )
 }

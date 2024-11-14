@@ -1,53 +1,102 @@
+import axios from "axios";
 import React, { useState } from "react";
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
-import { Link, useNavigate } from "react-router-dom";
-
-export default function LoginPage() {
-  const [data,setdata] = useState({
+export default function LoginPage({ open, setOpen }) {
+  const [data, setData] = useState({
     email: "",
     password: "",
-  })
-  const navigate = useNavigate();
+  });
 
-  const navigateHome = () =>{
-    navigate("/")
-  }
-
-  const handleInput = (e) =>{
+  const handleInput = (e) => {
     const { name, value } = e.target;
-    setdata((prevData) => ({
+    setData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
-  }
+  };
+
+  // sendig form data
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("", data);
+      console.log(res);
+      setData("");
+      setOpen(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <div className= "flex justify-center items-center h-screen backdrop-blur-xl bg-[url('https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWl8ZW58MHx8MHx8fDA%3D')] bg-no-repeat bg-cover w-auto bg-center">
-  <div className="bg-transparent rounded-lg shadow-lg w-full p-6 h-auto backdrop-blur-md max-w-md">
-    <h1 className="text-2xl font-semibold text-center text-black mb-6">Login</h1>
-    <form>
-      <div className="mb-4 flex flex-col gap-2">
-        <Label htmlFor="email" className="block text-white mb-1 text-lg">Email</Label>
-        <Input type="email" id="email" placeholder="Enter your email" className="bg-gray-50 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-none" value={data.email} onChange={handleInput}/>
-      </div>
-      <div className="mb-6 flex flex-col gap-2">
-        <Label htmlFor="password" className="block text-white text-lg mb-1">Password</Label>
-        <Input type="password" id="password" placeholder="Enter your password" className="bg-gray-50 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-none" value={data.password} onChange={handleInput}/>
-      </div>
-      <Button className="w-full py-2  text-white font-semibold rounded-lg transition duration-200" onClick={navigateHome}>Submit</Button>
-    </form>
-    <div className="flex justify-between items-center pt-4">
-    <a href="#" className="underline text-black hover:text-white ">ForgetPassword?</a>
-    <Link to={"/register"} className="text-black underline hover:text-white">No account? signup</Link>
-    </div>
+    <>
+      {open ? (
+        <div className="d-flex justify-content-center align-items-center h-auto">
+          <div
+            className="bg-transparent  w-100 p-4"
+            style={{ maxWidth: "400px", backdropFilter: "blur(10px)" }}
+          >
+            <h1 className="text-center mb-4">Login</h1>
 
-<div className="mt-8">
-  <p className="text-sm">By clicking Login or signing in through a third party you accept the LambdaTest Terms of Service and acknowledge the Privacy Policy and Cookie Policy</p>
-</div>
-  </div>
-</div>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label text-white">
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={data.email}
+                  onChange={handleInput}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label text-white">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  value={data.password}
+                  onChange={handleInput}
+                  required
+                />
+              </div>
 
+              <button type="submit" className="btn btn-dark w-100">
+                Submit
+              </button>
+            </form>
+
+            <div className="d-flex justify-content-between align-items-center mt-3">
+              <a href="#" className="text-decoration-none text-dark">
+                Forgot Password?
+              </a>
+              <Link to="/register" className="text-decoration-none text-dark">
+                No account? Signup
+              </Link>
+            </div>
+
+            <div className="mt-4 text-center">
+              <p className="small">
+                By clicking Login or signing in through a third party, you
+                accept the Terms of Service and acknowledge the Privacy and
+                Cookie Policies.
+              </p>
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+    </>
   );
 }
