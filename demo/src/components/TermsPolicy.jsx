@@ -5,7 +5,7 @@ import Header from "./Layout/Header";
 export default function TermsPolicy() {
   return (
     <>
-      <Header />
+      
       <div className="container py-5 text-black">
         <h1 className="text-center mb-4">Terms and Policy</h1>
 
@@ -72,7 +72,7 @@ export default function TermsPolicy() {
           </p>
         </section>
       </div>
-      <Footer />
+    
     </>
   );
 }
