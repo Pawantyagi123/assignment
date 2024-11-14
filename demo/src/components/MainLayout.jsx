@@ -8,13 +8,11 @@ import Contact from "./Pages/Contact";
 
 export default function MainLayout() {
   return (
-    <div>
-      <Header />
-      <Home />
+    <>
+      {/* <Home />
       <About />
       <Features />
-      <Contact />
-      <Footer />
-    </div>
+      <Contact /> */}
+    </>
   );
 }

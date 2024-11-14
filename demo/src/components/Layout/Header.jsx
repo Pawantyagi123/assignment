@@ -23,7 +23,8 @@ export default function Header() {
       <ul className="nav gap-4 ">
         <li className="nav-item">
           <NavLink
-            to={"/home"}
+            to="/"
+             aria-current="page"
             className={({ isActive }) =>
               `nav-link ${isActive ? "text-white fw-bold border-bottom border-primary" : "text-primary"}`
             }
@@ -33,7 +34,8 @@ export default function Header() {
         </li>
         <li className="nav-item">
           <NavLink
-            to={"/about"}
+            to="about"
+            aria-current="page"
             className={({ isActive }) =>
               `nav-link ${isActive ? "text-white fw-bold border-bottom border-primary" : "text-primary"}`
             }
@@ -43,7 +45,8 @@ export default function Header() {
         </li>
         <li className="nav-item">
           <NavLink
-            to={"/features"}
+            to="features"
+             aria-current="page"
             className={({ isActive }) =>
               `nav-link ${isActive ? "text-white fw-bold border-bottom border-primary" : "text-primary"}`
             }
@@ -53,7 +56,8 @@ export default function Header() {
         </li>
         <li className="nav-item">
           <NavLink
-            to={"/contact"}
+            to="contact"
+             aria-current="page"
             className={({ isActive }) =>
               `nav-link ${isActive ? "text-white fw-bold border-bottom border-primary" : "text-primary"}`
             }
@@ -65,8 +69,7 @@ export default function Header() {
     </nav>
 
     <button
-      className="btn btn-secondary px-4 py-2 d-flex align-items-center gap-2 rounded-5"
-      aria-label="Sign up for an account"
+      className="gradient-button"
       onClick={openPage}
     >
       Login
@@ -74,7 +77,7 @@ export default function Header() {
   </div>
 </header>
 
-<Modal show={open} onHide={openPage} centered dialogClassName="modal-md ">
+<Modal show={open} onHide={openPage} centered dialogClassName="modal-md login-model">
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
