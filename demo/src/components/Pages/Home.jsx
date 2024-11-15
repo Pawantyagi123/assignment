@@ -18,7 +18,7 @@ function HomePage() {
 
   return (
     <>
-   <div className="home d-flex justify-content-around align-items-center flex-wrap">
+   <div className="home d-flex justify-content-around align-items-center">
       {/* Video background */}
       <div className="video-background">
         <video autoPlay loop muted className="background-video">
@@ -61,9 +61,9 @@ function HomePage() {
           <SignupPage open={open} setOpen={setOpen} />
         </Modal.Body>
       </Modal>
-      <About/>
+      {/* <About/>
       <Features/>
-      <Contact/>
+      <Contact/> */}
     </>
   );
 }

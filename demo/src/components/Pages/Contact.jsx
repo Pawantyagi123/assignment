@@ -1,52 +1,76 @@
 import React from 'react';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaUserAlt,FaPhoneAlt, FaEnvelope  } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import video from "../Image/ContactUs (1).mp4"
 
 export default function Contact() {
   return (
-    <div className="contact-container text-center py-5">
-      <h1 className="contact-title">Contact Us</h1>
-      <p className="contact-description">
-        We’d love to hear from you! Reach out to us through any of the channels below.
-      </p>
-      
-      <div className="contact-info mt-4">
-        {/* Address */}
-        <div className="contact-item">
-          <FaMapMarkerAlt className="contact-icon" />
-          <p className="contact-text">123 Main Street, Springfield, USA</p>
-        </div>
+  <>
+   <div className="contact-wrapper d-flex flex-column flex-md-row align-items-stretch justify-content-between gap-4 p-4">
+  {/* Video Section */}
+  <div className="contact-video-container flex-fill">
+    <video autoPlay loop muted playsInline className="contact-video w-100 h-100 rounded shadow">
+      <source src={video} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-        {/* Phone Number */}
-        <div className="contact-item">
-          <FaPhoneAlt className="contact-icon" />
-          <p className="contact-text">+1 (123) 456-7890</p>
-        </div>
+  {/* Contact Form Section */}
+  <div className="contact-details flex-fill d-flex flex-column justify-content-center text-center text-md-start">
+    <h1 className="mb-4">Contact Us</h1>
+    <p className="mb-4">
+      We’d love to hear from you! Please fill out the form below, and we’ll get back to you shortly.
+    </p>
 
-        {/* Email Address */}
-        <div className="contact-item">
-          <FaEnvelope className="contact-icon" />
-          <p className="contact-text">info@company.com</p>
-        </div>
+    {/* Contact Form */}
+    <form className="contact-form mx-auto w-100" style={{ maxWidth: "350px" }}>
+      <div className='d-flex gap-2'>
+        <label htmlFor="name"><FaUserAlt/></label>
+      <input
+        type="text"
+        id='name'
+        placeholder="Your Name"
+        className="form-control rounded-pill p-2 shadow-sm mb-3"
+        required
+      />
       </div>
-
-      <div className="social-links mt-4">
-        <h3>Follow Us</h3>
-        <div className="social-icons d-flex justify-content-center gap-3 mt-2">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebook />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaTwitter />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram />
-          </a>
-        </div>
+      <div className='d-flex gap-2 '>
+        <label htmlFor="email"><MdEmail/></label>
+      <input
+        type="email"
+        id='email'
+        placeholder="Your Email"
+        className="form-control rounded-pill p-2 shadow-sm mb-3"
+        required
+      />
       </div>
-    </div>
+      <div className='d-flex gap-2 '>
+        <label htmlFor="phone"><FaPhoneAlt/></label>
+      <input
+        type="tel"
+        id='phone'
+        placeholder="Your Phone Number"
+        className="form-control rounded-pill p-2 shadow-sm mb-3"
+        required
+      />
+      </div>
+      <div className='d-flex gap-2'>
+        <label htmlFor="message"><FaEnvelope/></label>
+      <textarea
+        placeholder="Your Message"
+        className="form-control rounded-3 p-2 shadow-sm mb-3"
+        rows="3"
+        required
+      ></textarea>
+      </div>
+      <button type="submit" className="btn btn-primary rounded-pill px-4 py-2 mt-3 shadow">
+        Send Message
+      </button>
+    </form>
+  </div>
+</div>
+
+    </>
   );
 }
 

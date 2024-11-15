@@ -44,48 +44,6 @@
     
   }
 
-  .home {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full screen height */
-  }
-  
-  .video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Keep video behind content */
-  }
-  
-  .background-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure video covers the screen */
-  }
-  
-  .text-white {
-    position: relative;
-    z-index: 1; /* Keep text on top of the video */
-  }
-  
-  .image img {
-    position: relative;
-    z-index: 1;
-  }
-
-  .home h1{
-    font-size: 5rem;
-     box-shadow: 0px 0px 20px white;
-    letter-spacing: 10px;
-    border: 2px solid white;
-    padding: 5px 25px;
-    color: rgb(32, 30, 30);
-    background-color: white;
-    border-radius: 5px;
-    font-weight: bold;
-  }
 
  /* Button styles */
 .gradient-button {
@@ -128,6 +86,56 @@
     text-shadow: 2px 2px 8px rgba(175, 40, 40, 0.5);
   }
 
+  
+  .home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  }
+  
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep video behind content */
+  }
+  
+  .background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers the screen */
+  }
+  
+  .text-white {
+    position: relative;
+    z-index: 1; /* Keep text on top of the video */
+  }
+  
+  .image img {
+    position: relative;
+    z-index: 1;
+  }
+
+  .home h1{
+    font-size: 5rem;
+     box-shadow: 0px 0px 20px white;
+    letter-spacing: 10px;
+    border: 2px solid white;
+    padding: 5px 25px;
+    color: rgb(32, 30, 30);
+    background-color: white;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  @media (max-width:1200px){
+    .home{
+      flex-wrap: wrap;
+    }
+  }
 
   /* about page start*/
 .about-page {

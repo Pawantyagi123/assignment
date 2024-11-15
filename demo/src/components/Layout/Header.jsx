@@ -77,7 +77,7 @@ export default function Header() {
   </div>
 </header>
 
-<Modal show={open} onHide={openPage} centered dialogClassName="modal-md login-model bg-transparent modal">
+<Modal show={open} onHide={openPage} centered dialogClassName="modal-lg bg-transparent modal">
         <Modal.Body className="modal-body">
           <LoginPage open={open} setOpen={setOpen} />
         </Modal.Body>

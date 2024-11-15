@@ -1,61 +1,75 @@
-.contact-container {
-    background-color: #f9f9f9;
-    padding: 2rem;
-    border-radius: 8px;
-    max-width: 600px;
-    margin: auto;
-  }
-  
-  .contact-title {
-    font-size: 2rem;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .contact-description {
-    color: #555;
-    margin-top: 0.5rem;
-  }
-  
-  .contact-info {
-    display: flex;
+/* Contact Wrapper */
+.contact-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  height: 100%;
+}
+
+/* Video Section */
+.contact-video-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-video {
+  object-fit: cover;
+  height: 100%;
+  max-height: 500px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Form Section */
+.contact-details {
+  flex: 1;
+  padding: 20px;
+}
+.contact-details h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+.contact-details p {
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form .form-control {
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  padding: 10px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.contact-form .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.contact-form button {
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-wrapper {
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
   }
-  
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  .contact-video-container,
+  .contact-details {
+    flex: none;
+    width: 100%;
   }
-  
-  .contact-icon {
-    font-size: 1.2rem;
-    color: #007bff;
+  .contact-video {
+    max-height: 300px;
   }
-  
-  .contact-text {
-    font-size: 1.1rem;
-    color: #333;
-  }
-  
-  .social-links {
-    margin-top: 2rem;
-  }
-  
-  .social-links h3 {
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
-  .social-icons a {
-    font-size: 1.5rem;
-    color: #007bff;
-    transition: color 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #0056b3;
-  }
+}
+
   
