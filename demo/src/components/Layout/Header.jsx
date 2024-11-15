@@ -12,7 +12,7 @@ export default function Header() {
   }
   return (
     <>
-      <header className="header px-4 py-3 sticky-top border-bottom border-secondary shadow-sm">
+      <header className="header px-4 py-3 sticky-top border-bottom border-secondary shadow-sm w-100">
   <div className="container-fluid d-flex align-items-center justify-content-between">
     <div className="d-flex align-items-center gap-2">
       <img src="" alt="logo" className="rounded-circle" style={{ width: "40px", height: "40px" }} />
@@ -77,10 +77,8 @@ export default function Header() {
   </div>
 </header>
 
-<Modal show={open} onHide={openPage} centered dialogClassName="modal-md login-model">
-        <Modal.Header closeButton>
-        </Modal.Header>
-        <Modal.Body>
+<Modal show={open} onHide={openPage} centered dialogClassName="modal-md login-model bg-transparent modal">
+        <Modal.Body className="modal-body">
           <LoginPage open={open} setOpen={setOpen} />
         </Modal.Body>
       </Modal>

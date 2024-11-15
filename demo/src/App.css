@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.header{
+  background-color: rgb(0, 0, 0);
+  
+}
+
 .image{
     display: flex;
     justify-content: center;
@@ -36,29 +43,6 @@
     border-color: white;
     
   }
-
- 
-
-  .header{
-    background-color: black;
-  }
-
-  .about{
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: top;
-    color: white;
-    
-    padding: 20px;
-  }
- 
-
-  .about img{
-    width: 70%;
-    border-radius: 10px;
-  }
-
 
   .home {
     position: relative;
@@ -122,9 +106,9 @@
 
 /* Hover effect: background gradient and text color change */
 .gradient-button:hover {
-  background: white;
+  background: #8e2de2;
   color: rgb(8, 8, 8);
-  border: 2px solid #8e2de2;
+  border: 2px solid white;
  
 }
 
@@ -143,3 +127,159 @@
     color: white; /* Optional: set text color */
     text-shadow: 2px 2px 8px rgba(175, 40, 40, 0.5);
   }
+
+
+  /* about page start*/
+.about-page {
+  background-color: #000;
+  color: #fff;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Heading Section */
+.about-heading h2 {
+  font-size: 1.2em;
+  color: #4a90e2;
+  margin-bottom: 10px;
+}
+
+.about-heading h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-heading p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+/* Image Section */
+.about-content {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.about-image img {
+  width: 400px;
+  height: auto;
+  border-radius: 8px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+
+/* Button Section */
+.about-button {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.about-button button {
+  background: transparent;
+  border: 2px solid #54afd8;
+  color: #fff;
+  font-size: 1.2em;
+  width: 150px;
+  height: 150px;
+  padding: 10px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-button button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.about-button .arrow {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-heading p,h1{
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+}
+
+.gif-image{
+  animation: spin 10s linear infinite;
+}
+
+/* Features section start */
+
+.features {
+  padding: 20px;
+  text-align: center;
+  color: white;
+  background-color: #000;
+  height: 30vh;
+  width: 100%;
+}
+
+.features h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #00aced;
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px;
+ 
+}
+
+.marquee-container marquee {
+  font-size: 1.2rem;
+}
+
+.feature-item {
+  display: inline-block;
+  margin-right: 30px;
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-right: 10px;
+}
+
+.feature-text {
+  font-weight: bold;
+  font-size: 2rem;
+  opacity: 0.4;
+}
+
+.feature-text:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+

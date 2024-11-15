@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { MdEmail } from "react-icons/md";
+import { FaLock  } from "react-icons/fa";
 
 export default function LoginPage({ open, setOpen }) {
   const [data, setData] = useState({
@@ -32,7 +34,7 @@ export default function LoginPage({ open, setOpen }) {
   return (
     <>
       {open ? (
-        <div className="d-flex justify-content-center align-items-center h-auto">
+        <div className="d-flex justify-content-center align-items-center h-auto bg-transparent ">
           <div
             className="bg-transparent  w-100 p-4"
             style={{ maxWidth: "400px", backdropFilter: "blur(10px)" }}
@@ -41,8 +43,8 @@ export default function LoginPage({ open, setOpen }) {
 
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
-                <label htmlFor="email" className="form-label text-white">
-                  Email address
+                <label htmlFor="email" className="form-label fs-5">
+                  <MdEmail/>
                 </label>
                 <input
                   type="email"
@@ -56,8 +58,8 @@ export default function LoginPage({ open, setOpen }) {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="password" className="form-label text-white">
-                  Password
+                <label htmlFor="password" className="form-label fs-5">
+                  <FaLock/>
                 </label>
                 <input
                   type="password"
@@ -80,7 +82,7 @@ export default function LoginPage({ open, setOpen }) {
               <a href="#" className="text-decoration-none text-dark">
                 Forgot Password?
               </a>
-              <Link to="/register" className="text-decoration-none text-dark">
+              <Link to="#" className="text-decoration-none text-dark">
                 No account? Signup
               </Link>
             </div>

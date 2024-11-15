@@ -18,7 +18,7 @@ function HomePage() {
 
   return (
     <>
-   <div className="home d-flex justify-content-around align-items-center">
+   <div className="home d-flex justify-content-around align-items-center flex-wrap">
       {/* Video background */}
       <div className="video-background">
         <video autoPlay loop muted className="background-video">
@@ -53,10 +53,10 @@ function HomePage() {
     </div>
       
       {/* Modal for Signup Page */}
-      <Modal show={open} onHide={handlePopup} centered dialogClassName="modal-lg">
-        <Modal.Header closeButton>
-          <Modal.Title className="w-100 text-center">Sign Up</Modal.Title>
-        </Modal.Header>
+      <Modal show={open} onHide={handlePopup} centered dialogClassName="modal-lg bg-blur">
+        
+          <Modal.Title className="w-100 text-center p-2">Sign Up</Modal.Title>
+       
         <Modal.Body>
           <SignupPage open={open} setOpen={setOpen} />
         </Modal.Body>

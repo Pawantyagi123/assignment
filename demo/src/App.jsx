@@ -1,4 +1,5 @@
 import "./App.css";
+import "./Contact.css"
 import About from "./components/Pages/About";
 import Contact from "./components/Pages/Contact";
 import ErrorPage from "./components/ErrorPage";
@@ -48,10 +49,11 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} >
           <Route path="about" element={<About />} />
           <Route path="features" element={<Features />} />
           <Route path="contact" element={<Contact />} />
+          </Route>
           <Route path="/termsandPolicy" element={<TermsPolicy />} />
         </Routes>
         <Footer />

@@ -1,15 +1,29 @@
 import React from 'react'
-
+import gif from "../Image//gif2.gif"
+import image from "../Image/about-image.avif"
 export default function About() {
   return (
-    <div className='about'>
-    <div className='text-center'>
-      <h1>About us</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quae accusamus, aliquid tenetur voluptate tempora laboriosam, laborum temporibus fuga veniam, iste minus quibusdam eligendi aperiam maiores voluptatibus similique excepturi quasi!</p>
+    <div className="about-page d-flex justify-content-between align-items-center">
+    <div className="about-heading d-flex flex-column justify-content-start gap-4">
+      <div className='d-flex justify-content-start align-items-center'>
+        <img src={gif} alt="" width="100px"/>
+      <h1>About Us</h1>
+      </div>
+      <h1>Your Experience Is Everything To Us</h1>
+      <div className="about-image d-flex justify-content-between">
+        <img src={image} alt="Artificial Intelligence" />
+        <div className="about-button">
+      <button>About Us <span className="arrow">&#8595;</span></button>
     </div>
-    <div className='d-flex justify-content-end'>
-<img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image"/>
+      </div>
+      <p className='para'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab distinctio quidem nesciunt, eligendi autem eveniet natus quis harum unde praesentium, odit ex accusamus vel. Cupiditate, nisi facere minima aspernatur dolorum unde perspiciatis incidunt culpa quasi, laborum enim ipsam omnis delectus?</p>
     </div>
+    <div className="about-content">
+      <div className="about-image gif-image">
+        <img src={gif} alt="Developer Coding"/>
+      </div>
     </div>
+  </div>
+  
   )
 }

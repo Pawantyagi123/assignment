@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { FaUserAlt,FaPhoneAlt,FaBuilding,FaLock,FaServicestack  } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { FaLink } from "react-icons/fa6";
 
 export default function SignupPage({ open, setOpen }) {
   const [page, setPage] = useState(1);
@@ -31,8 +34,8 @@ export default function SignupPage({ open, setOpen }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/your-api-endpoint", formData);
-      console.log(res);
+      // const res = await axios.post("/your-api-endpoint", formData);
+      console.log(formData);
       alert("Form submitted successfully!");
       setPage(1);
       setFormData("");
@@ -65,7 +68,7 @@ export default function SignupPage({ open, setOpen }) {
   {page === 1 && (
     <>
       <div className="mb-3">
-        <label htmlFor="name" className="form-label">Name</label>
+        <label htmlFor="name" className="form-label fs-5"><FaUserAlt/></label>
         <input
           type="text"
           className="form-control"
@@ -79,7 +82,7 @@ export default function SignupPage({ open, setOpen }) {
       </div>
 
       <div className="mb-3">
-        <label htmlFor="email" className="form-label">Email</label>
+        <label htmlFor="email" className="form-label fs-5"><MdEmail/></label>
         <input
           type="email"
           className="form-control"
@@ -93,7 +96,7 @@ export default function SignupPage({ open, setOpen }) {
       </div>
 
       <div className="mb-3">
-        <label htmlFor="phone" className="form-label">Phone Number</label>
+        <label htmlFor="phone" className="form-label fs-5"><FaPhoneAlt/></label>
         <input
           type="tel"
           className="form-control"
@@ -120,7 +123,7 @@ export default function SignupPage({ open, setOpen }) {
   {page === 2 && (
     <>
       <div className="mb-3">
-        <label htmlFor="companyName" className="form-label">Company Name</label>
+        <label htmlFor="companyName" className="form-label fs-5"><FaBuilding/></label>
         <input
           type="text"
           className="form-control"
@@ -134,7 +137,7 @@ export default function SignupPage({ open, setOpen }) {
       </div>
 
       <div className="mb-3">
-        <label htmlFor="companyUrl" className="form-label">Company URL</label>
+        <label htmlFor="companyUrl" className="form-label fs-5"><FaLink/></label>
         <input
           type="url"
           className="form-control"
@@ -148,7 +151,7 @@ export default function SignupPage({ open, setOpen }) {
       </div>
 
       <div className="mb-3">
-        <label htmlFor="services" className="form-label">Service</label>
+        <label htmlFor="services" className="form-label fs-5"><FaServicestack/></label>
         <select
           className="form-select"
           id="services"
@@ -178,7 +181,7 @@ export default function SignupPage({ open, setOpen }) {
   {page === 3 && (
     <>
       <div className="mb-3">
-        <label htmlFor="password" className="form-label">Password</label>
+        <label htmlFor="password" className="form-label fs-5"><FaLock/></label>
         <input
           type="password"
           className="form-control"
@@ -192,7 +195,7 @@ export default function SignupPage({ open, setOpen }) {
       </div>
 
       <div className="mb-3">
-        <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+        <label htmlFor="confirmPassword" className="form-label fs-5"><FaLock/></label>
         <input
           type="password"
           className="form-control"
@@ -215,7 +218,7 @@ export default function SignupPage({ open, setOpen }) {
           onChange={handleInputChange}
           required
         />
-        <label htmlFor="termsAccepted" className="form-check-label">
+        <label htmlFor="termsAccepted" className="form-check-label fs-5">
           I agree to the Terms and Policy <Link to={"/termsandPolicy"}>Terms and Policy</Link>
         </label>
       </div>
