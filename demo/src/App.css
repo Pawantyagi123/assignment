@@ -2,28 +2,55 @@
 
 .header{
   background-color: rgb(0, 0, 0);
-  
 }
 
-.image{
+ /* Button styles */
+.gradient-button {
+  padding: 0.60rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: transparent;
+  border: 2px solid #8e2de2; /* Purple border color */
+  border-radius: 30px;
+  transition: background 0.8s ease-in-out, color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Hover effect: background gradient and text color change */
+.gradient-button:hover {
+  background: #8e2de2;
+  color: rgb(8, 8, 8);
+  border: 2px solid white;
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.6);
+}
+
+
+  /* Home Page */
+  .home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image img {
-    width: 300px;
-    animation: spin 10s linear infinite;
-    transform-origin: center; 
+   
   }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+
+  .home h1{
+    font-size: 5rem;
+     box-shadow: 0px 0px 20px white;
+    letter-spacing: 10px;
+    border: 2px solid white;
+    padding: 5px 25px;
+    color: rgb(32, 30, 30);
+    background-color: white;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .para{
+    font-size: 1.2rem;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(175, 40, 40, 0.5);
   }
 
   .button{
@@ -36,6 +63,7 @@
     transition: background-color 0.7s, border-color 0.7s, color 0.7s ease-in-out;
     font-size: 25px;
     font-weight: bold;
+    text-decoration: none;
   }
 
   .button:hover{
@@ -43,57 +71,6 @@
     border-color: white;
     
   }
-
-
- /* Button styles */
-.gradient-button {
-  padding: 0.75rem 2rem;
-  font-weight: bold;
-  font-size: 1rem;
-  color: white;
-  background-color: transparent;
-  border: 2px solid #8e2de2; /* Purple border color */
-  border-radius: 30px;
-  transition: background 0.8s ease-in-out, color 0.4s ease-in-out, border-color 0.4s ease-in-out;
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-  
-}
-
-/* Hover effect: background gradient and text color change */
-.gradient-button:hover {
-  background: #8e2de2;
-  color: rgb(8, 8, 8);
-  border: 2px solid white;
- 
-}
-
-/* Optional subtle text-shadow for a glow effect */
-.gradient-button:hover {
-  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.6);
-}
-
-
-  .login-model{
-    background-color: black;
-  }
-
-  .para{
-    font-size: 1.2rem;
-    color: white; /* Optional: set text color */
-    text-shadow: 2px 2px 8px rgba(175, 40, 40, 0.5);
-  }
-
-  
-  .home {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-  }
-  
   .video-background {
     position: absolute;
     top: 0;
@@ -119,17 +96,28 @@
     z-index: 1;
   }
 
-  .home h1{
-    font-size: 5rem;
-     box-shadow: 0px 0px 20px white;
-    letter-spacing: 10px;
-    border: 2px solid white;
-    padding: 5px 25px;
-    color: rgb(32, 30, 30);
-    background-color: white;
-    border-radius: 5px;
-    font-weight: bold;
+  .image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img{
+      width: 300px;
+      animation: spin 10s linear infinite;
+      transform-origin: center; 
+    }
+}
+
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
+
 
   @media (max-width:1200px){
     .home{
@@ -290,4 +278,44 @@
   cursor: pointer;
 }
 
+.signup-container{
+  width: 100%;
+}
+.signup{
+  height: 80vh;
+  background: #79096f;
+  border-radius: 5px;
+  display: inline-block;
+}
 
+
+@media (max-width:990px){
+.signup{
+  display: none;
+}
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+  padding-top: 20px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

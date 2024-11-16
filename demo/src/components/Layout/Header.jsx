@@ -1,14 +1,15 @@
 import { NavLink } from "react-router-dom";
 import LoginPage from "../LoginPage";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Modal} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Context } from "../Context/Context";
 
 export default function Header() {
-   const [open, setOpen] = useState(false);
+  const {openLogin, setOpenLogin} = useContext(Context)
 
   const openPage = ()=>{
-    setOpen(!open)
+    setOpenLogin(!openLogin)
   }
   return (
     <>
@@ -68,18 +69,18 @@ export default function Header() {
       </ul>
     </nav>
 
-    <button
+    <NavLink to={"login"}
       className="gradient-button"
       onClick={openPage}
     >
       Login
-    </button>
+    </NavLink>
   </div>
 </header>
 
-<Modal show={open} onHide={openPage} centered dialogClassName="modal-lg bg-transparent modal">
+<Modal show={openLogin} onHide={openPage} centered dialogClassName="modal-lg bg-transparent modal">
         <Modal.Body className="modal-body">
-          <LoginPage open={open} setOpen={setOpen} />
+          <LoginPage />
         </Modal.Body>
       </Modal>
     </>

@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Modal} from 'react-bootstrap';
+import { NavLink } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import SignupPage from '../SignupPage';
 import image from "../Image/rolling.png"
@@ -8,24 +9,26 @@ import video from "../Image/video.mp4"
 import Features from './Features';
 import About from './About';
 import Contact from './Contact';
+import { Context } from '../Context/Context';
 
 function HomePage() {
-  const [open, setOpen] = useState(false);
+ const {openSignup, setOpenSignup} = useContext(Context)
 
   const handlePopup = () => {
-    setOpen(!open);
+    setOpenSignup(!openSignup);
   };
 
   return (
     <>
    <div className="home d-flex justify-content-around align-items-center">
       {/* Video background */}
-      <div className="video-background">
+       <div className="video-background">
         <video autoPlay loop muted className="background-video">
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div>
+      </div> 
+      
 
       {/* Main Content */}
       <div className="text-white h-fullscreen d-flex flex-column justify-content-between align-items-center p-5 text-center w-50">
@@ -40,9 +43,9 @@ function HomePage() {
           </Fade>
         </div>
         <div className="container py-3 d-flex align-items-center justify-content-center">
-          <button className="button" onClick={handlePopup}>
+          <NavLink to="register" onClick={handlePopup} className="button">
             Join us
-          </button>
+          </NavLink>
         </div>
       </div>
 
@@ -53,12 +56,9 @@ function HomePage() {
     </div>
       
       {/* Modal for Signup Page */}
-      <Modal show={open} onHide={handlePopup} centered dialogClassName="modal-lg bg-blur">
-        
-          <Modal.Title className="w-100 text-center p-2">Sign Up</Modal.Title>
-       
+      <Modal show={openSignup} onHide={handlePopup} centered dialogClassName="modal-xl bg-blur">
         <Modal.Body>
-          <SignupPage open={open} setOpen={setOpen} />
+          <SignupPage/>
         </Modal.Body>
       </Modal>
       {/* <About/>

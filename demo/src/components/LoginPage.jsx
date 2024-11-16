@@ -1,16 +1,23 @@
 import axios from "axios";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
 import { FaLock  } from "react-icons/fa";
 import image from "./Image/loginimg.png"
+import { Context } from "./Context/Context";
 
-export default function LoginPage({ open, setOpen }) {
+export default function LoginPage() {
+  const {openLogin,setOpenLogin, openSignup,setOpenSignup} = useContext(Context);
   const [data, setData] = useState({
     email: "",
     password: "",
   });
-
+ 
+  const handleSignup = () =>{
+    setOpenLogin(!openLogin);
+    setOpenSignup(!openSignup)
+  }
+ 
   const handleInput = (e) => {
     const { name, value } = e.target;
     setData((prevData) => ({
@@ -26,7 +33,7 @@ export default function LoginPage({ open, setOpen }) {
       const res = await axios.post("", data);
       console.log(res);
       setData("");
-      setOpen(false);
+      setOpenLogin(false);
     } catch (error) {
       console.log(error);
     }
@@ -34,14 +41,14 @@ export default function LoginPage({ open, setOpen }) {
 
   return (
     <>
-      {open ? (
+      {openLogin ? (
   <div className="d-flex justify-content-center align-items-center h-auto bg-transparent">
     <div
       className="row w-100 p-4"
       style={{ maxWidth: "900px" }} // Ensuring a max-width for better responsiveness
     >
       {/* Left side with blue background */}
-      <div className="col-md-6 bg-primary text-white d-flex justify-content-center align-items-center p-4 flex-column">
+      <div className="col-md-6 bg-primary text-white d-flex justify-content-center align-items-center p-4 flex-column d-none d-lg-block">
         <h2 className="text-center">Welcome Back to Testfy*</h2>
         <img src={image} alt="" style={{width: "300px"}}/>
       </div>
@@ -91,9 +98,9 @@ export default function LoginPage({ open, setOpen }) {
           <a href="#" className="text-decoration-none text-dark">
             Forgot Password?
           </a>
-          <Link to="#" className="text-decoration-none text-dark">
+          <NavLink to={"register"} className="text-decoration text-dark" onClick={handleSignup}>
             No account? Signup
-          </Link>
+          </NavLink>
         </div>
 
         <div className="mt-4 text-center">

@@ -9,6 +9,8 @@ import TermsPolicy from "./components/TermsPolicy";
 import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
 import MainLayout from "./components/MainLayout";
+import LoginPage from "./components/LoginPage";
+import SignupPage from "./components/SignupPage";
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="features" element={<Features />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="login" element={<LoginPage/>}/>
+          <Route path="register" element={<SignupPage/>}/>
           </Route>
           <Route path="/termsandPolicy" element={<TermsPolicy />} />
         </Routes>

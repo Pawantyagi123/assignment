@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { FaUserAlt,FaPhoneAlt,FaBuilding,FaLock,FaServicestack, FaEnvelope  } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import { FaUserAlt,FaPhoneAlt,FaBuilding,FaLock,FaServicestack  } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLink } from "react-icons/fa6";
+import { Context } from "./Context/Context";
+import signupSchema from "./schema/SignupSchema";
+import SignupPoster from "./SignupPoster";
 
-export default function SignupPage({ open, setOpen }) {
+export default function SignupPage() {
+  const {openSignup, setOpenSignup,openLogin, setOpenLogin} = useContext(Context)
   const [page, setPage] = useState(1);
+  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,52 +36,57 @@ export default function SignupPage({ open, setOpen }) {
   const nextPage = () => setPage((prev) => prev + 1);
   const prevPage = () => setPage((prev) => prev - 1);
 
+  const validateForm = async () => {
+    try {
+      await signupSchema.validate(formData, { abortEarly: false });
+      setErrors({});
+      return true;
+    } catch (err) {
+      const validationErrors = {};
+      errors.inner.forEach((error) => {
+        validationErrors[error.path] = error.message;
+      });
+      setErrors(validationErrors);
+      return false;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       // const res = await axios.post("/your-api-endpoint", formData);
-      console.log(formData);
-      alert("Form submitted successfully!");
-      setPage(1);
-      setFormData("");
-      setOpen(false);
+      const isValid = await validateForm();
+      if(isValid){
+        console.log(formData);
+        alert("Form submitted successfully!");
+        setPage(1);
+        setFormData("");
+      }
+      setOpenSignup(false);
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Form submission failed.");
     }
   };
 
+  const handleLogin = () =>{
+    setOpenSignup(!openSignup)
+      setOpenLogin(!openLogin);
+  }
   return (
     <>
-    { open ?
-      <Container fluid className="position-relative top-0">
-      <Row className="d-flex align-items-center justify-content-center">
+    { openSignup ?
+      <Container fluid className="signup-container">
+      <Row className="">
         {/* Video/Image Section */}
-        <Col md={6} className="bg-light p-4">
-          <h3 className="mb-3">Contact Us at Testfy</h3>
-
-          {/* Company Info */}
-          <div className="mb-4">
-            <h4 className="mb-3">Company Details:</h4>
-            <div className="d-flex align-items-center mb-3">
-              <FaBuilding className="me-3" />
-              <p className="mb-0">Testfy, 123 Tech Road, Silicon Valley, USA</p>
-            </div>
-
-            <div className="d-flex align-items-center mb-3">
-              <FaPhoneAlt className="me-3" />
-              <p className="mb-0">+1 (123) 456-7890</p>
-            </div>
-
-            <div className="d-flex align-items-center mb-3">
-              <FaEnvelope className="me-3" />
-              <p className="mb-0">contact@testfy.com</p>
-            </div>
-          </div>
+        <Col md={6} className="signup p-4 text-white">
+        <SignupPoster/>
         </Col>
 
-        <Col md={6}>
-          <form onSubmit={handleSubmit}>
+        <Col md={6} className=" bg-body-secondary">
+        <h1 className="text-center">SignUp</h1>
+        <p className="text-center">Have an account? <NavLink to={"login"} onClick={handleLogin}>Login</NavLink></p>
+          <form onSubmit={handleSubmit} className=" p-3">
             {page === 1 && (
               <>
                 <div className="mb-3">
@@ -93,6 +103,7 @@ export default function SignupPage({ open, setOpen }) {
                     required
                     placeholder="Enter your name"
                   />
+                  {errors.name && <p className="text-danger">{errors.name}</p>}
                 </div>
 
                 <div className="mb-3">
@@ -109,6 +120,7 @@ export default function SignupPage({ open, setOpen }) {
                     required
                     placeholder="Enter your email"
                   />
+                  {errors.email && <p className="text-danger">{errors.email}</p>}
                 </div>
 
                 <div className="mb-3">
@@ -125,13 +137,13 @@ export default function SignupPage({ open, setOpen }) {
                     required
                     placeholder="Enter your phone number"
                   />
+                  {errors.phone && <p className="text-danger">{errors.phone}</p>}
                 </div>
 
                 <button
                   type="button"
                   className="btn btn-primary"
                   onClick={nextPage}
-                  disabled={!formData.name || !formData.email}
                 >
                   Next
                 </button>
@@ -154,6 +166,7 @@ export default function SignupPage({ open, setOpen }) {
                     required
                     placeholder="Enter your company name"
                   />
+                  {errors.companyName && <p className="text-danger">{errors.companyName}</p>}
                 </div>
 
                 <div className="mb-3">
@@ -170,6 +183,7 @@ export default function SignupPage({ open, setOpen }) {
                     required
                     placeholder="Enter your company URL"
                   />
+                  {errors.companyUrl && <p className="text-danger">{errors.companyUrl}</p>}
                 </div>
 
                 <div className="mb-3">
@@ -218,6 +232,7 @@ export default function SignupPage({ open, setOpen }) {
                     required
                     placeholder="Enter your password"
                   />
+                  {errors.password && <p className="text-danger">{errors.password}</p>}
                 </div>
 
                 <div className="mb-3">
@@ -234,6 +249,7 @@ export default function SignupPage({ open, setOpen }) {
                     required
                     placeholder="Confirm your password"
                   />
+                  {errors.confirmPassword && <p className="text-danger">{errors.confirmPassword}</p>}
                 </div>
 
                 <div className="mb-3 form-check">
@@ -248,7 +264,7 @@ export default function SignupPage({ open, setOpen }) {
                   />
                   <label htmlFor="termsAccepted" className="form-check-label fs-5">
                     I agree to the Terms and Policy{" "}
-                    <Link to={"/termsandPolicy"}>Terms and Policy</Link>
+                    <NavLink to={"/termsandPolicy"}>Terms and Policy</NavLink>
                   </label>
                 </div>
 
