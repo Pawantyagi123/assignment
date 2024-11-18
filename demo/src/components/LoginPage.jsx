@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
 import { FaLock  } from "react-icons/fa";
 import image from "./Image/loginimg.png"
 import { Context } from "./Context/Context";
+import logo from "./Image/testfy (1).png"
 
 export default function LoginPage() {
   const {openLogin,setOpenLogin, openSignup,setOpenSignup} = useContext(Context);
@@ -44,73 +45,92 @@ export default function LoginPage() {
       {openLogin ? (
   <div className="d-flex justify-content-center align-items-center h-auto bg-transparent">
     <div
-      className="row w-100 p-4"
+      className="row w-100"
       style={{ maxWidth: "900px" }} // Ensuring a max-width for better responsiveness
     >
       {/* Left side with blue background */}
-      <div className="col-md-6 bg-primary text-white d-flex justify-content-center align-items-center p-4 flex-column d-none d-lg-block">
-        <h2 className="text-center">Welcome Back to Testfy*</h2>
-        <img src={image} alt="" style={{width: "300px"}}/>
+      <div className="col-md-6 bg-transparent text-white d-flex justify-content-center align-items-center p-4 flex-column">
+  <img src={logo} alt="logo" style={{width:"100px", height: "100px",borderRadius: "50%"}}/>
+        <h2 className="text-center">Welcome Back</h2>
+        <img src={image} alt="" style={{width: "300px"}} className="login-gif"/>
       </div>
 
       {/* Right side with form */}
-      <div className="col-md-6 bg-white p-4">
-        <h1 className="text-center mb-4" style={{fontWeight:"bolder"}}>Hi'There</h1>
+      <div className="col-md-6 p-4 rounded login-form">
+  <h1 className="text-center mb-4" style={{ fontWeight: "bolder" }}>
+   Login
+  </h1>
 
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label fs-5">
-              <MdEmail />
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              value={data.email}
-              onChange={handleInput}
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label fs-5">
-              <FaLock />
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              value={data.password}
-              onChange={handleInput}
-              required
-            />
-          </div>
+  <form onSubmit={handleSubmit}>
+    {/* Email Input */}
+    <div className="mb-3">
+      <label htmlFor="email" className="form-label fs-5">
+        <MdEmail />
+      </label>
+      <input
+        type="email"
+        className="form-control"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+        value={data.email}
+        onChange={handleInput}
+        required
+      />
+    </div>
 
-          <button type="submit" className="btn btn-dark w-100">
-            Submit
-          </button>
-        </form>
+    {/* Password Input */}
+    <div className="mb-3">
+      <label htmlFor="password" className="form-label fs-5">
+        <FaLock />
+      </label>
+      <input
+        type="password"
+        className="form-control"
+        id="password"
+        name="password"
+        placeholder="Enter your password"
+        value={data.password}
+        onChange={handleInput}
+        required
+      />
+    </div>
 
-        <div className="d-flex justify-content-between align-items-center mt-3">
-          <a href="#" className="text-decoration-none text-dark">
-            Forgot Password?
-          </a>
-          <NavLink to={"register"} className="text-decoration text-dark" onClick={handleSignup}>
-            No account? Signup
-          </NavLink>
-        </div>
+    {/* Submit Button */}
+    <button type="submit" className="btn btn-dark w-100">
+      Login
+    </button>
+  </form>
 
-        <div className="mt-4 text-center">
-          <p className="small">
-            By clicking Login or signing in through a third party, you
-            accept the Terms of Service and acknowledge the Privacy and
-            Cookie Policies.
-          </p>
-        </div>
-      </div>
+  {/* Links Section */}
+  <div className="d-flex justify-content-between align-items-center mt-3">
+    <NavLink
+      to={"#"}
+      className=" text-white"
+      
+    >
+      Forgot Password?
+    </NavLink>
+    <NavLink
+      to={"register"}
+      className="text-white"
+      onClick={handleSignup}
+    >
+      No account? Signup
+    </NavLink>
+  </div>
+
+  {/* Terms and Privacy Section */}
+  <div className="mt-4 text-center">
+    <p className="small">
+      By logging in or signing in through a third party, you accept the{" "}
+      <a href="/termsandPolicy" className="text-blue">
+        Terms of Service and Privacy and Cookie Policies.
+      </a>
+    </p>
+  </div>
+</div>
+
     </div>
   </div>
 ) : (

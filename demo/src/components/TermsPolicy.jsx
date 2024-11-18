@@ -5,74 +5,84 @@ import Header from "./Layout/Header";
 export default function TermsPolicy() {
   return (
     <>
-      
-      <div className="container py-5 text-black">
-        <h1 className="text-center mb-4">Terms and Policy</h1>
+    <div className="container py-5 text-black">
+  {/* Header Section */}
+  <div className="text-center mb-4 position-relative">
+    <h1 className="mb-0">Terms and Policy</h1>
+    <div className="custom-border"></div>
+  </div>
 
-        <section>
-          <h2>Introduction</h2>
-          <p>
-            Welcome to our Terms and Policy page. By using this website, you
-            agree to comply with the terms and conditions outlined below.
-          </p>
-        </section>
+  {/* Welcome Section */}
+  <section className="mb-5">
+    <h2 className="border-bottom pb-2 mb-4">Welcome to Testfy!</h2>
+    <p className="text-muted">
+      These terms and conditions outline the rules and regulations for the use
+      of <strong>Company Name's</strong> Website, located at Website.com. By
+      accessing this website, we assume you accept these terms and conditions.
+    </p>
+    <p className="text-muted">
+      Most interactive websites use cookies to retrieve user details for each
+      visit. Cookies are used by our website to enable certain functionalities
+      and enhance the user experience. Some affiliate/advertising partners may
+      also use cookies.
+    </p>
+  </section>
 
-        <section>
-          <h2>Terms of Service</h2>
-          <p>
-            1. You agree to use this website in accordance with all applicable
-            laws and regulations.
-            <br />
-            2. The website owner reserves the right to modify or terminate
-            services without prior notice.
-            <br />
-            3. Users are responsible for maintaining the confidentiality of
-            their account information.
-            <br />
-            4. Any misuse of the website may result in the suspension or
-            termination of access to the service.
-          </p>
-        </section>
+  {/* License Section */}
+  <section className="mb-5">
+    <h2 className="border-bottom pb-2 mb-4">License</h2>
+    <p className="text-muted">
+      Unless otherwise stated, <strong>Company Name</strong> and/or its
+      licensors own the intellectual property rights for all material on
+      Website Name. You may access this material for personal use, subject to
+      the restrictions set in these terms and conditions.
+    </p>
+    <ul className="list-unstyled ps-4">
+      <li className="mb-2">❌ Republish material from Website Name</li>
+      <li className="mb-2">❌ Sell, rent or sub-license material from Website Name</li>
+      <li className="mb-2">❌ Reproduce, duplicate, or copy material from Website Name</li>
+      <li>❌ Redistribute content from Website Name</li>
+    </ul>
+  </section>
 
-        <section>
-          <h2>Privacy Policy</h2>
-          <p>
-            We value your privacy. Here’s what we do with your data:
-            <br />
-            1. We collect basic information such as your name, email, and usage
-            data for the purpose of providing better services.
-            <br />
-            2. Your personal data will not be sold or shared with third parties
-            without your consent.
-            <br />
-            3. We take reasonable measures to ensure the security of your data,
-            but no method of transmission over the internet is 100% secure.
-          </p>
-        </section>
+  {/* Comments Section */}
+  <section className="mb-5">
+    <h2 className="border-bottom pb-2 mb-4">Comments</h2>
+    <p className="text-muted">
+      <strong>Company Name</strong> reserves the right to monitor comments and
+      remove any that are deemed inappropriate or offensive.
+    </p>
+    <ul className="list-unstyled ps-4">
+      <li className="mb-2">✔ You are entitled to post comments with proper licenses.</li>
+      <li className="mb-2">
+        ✔ Comments do not infringe on intellectual property rights.
+      </li>
+      <li className="mb-2">
+        ✔ Comments are not defamatory or offensive in any manner.
+      </li>
+      <li>✔ Comments do not promote unlawful activities.</li>
+    </ul>
+  </section>
 
-        <section>
-          <h2>Cookie Policy</h2>
-          <p>
-            1. We use cookies to enhance your experience on our website.
-            <br />
-            2. Cookies are small text files stored on your device that help us
-            understand how you use our site.
-            <br />
-            3. You can modify your browser settings to refuse cookies, but this
-            may affect your user experience.
-          </p>
-        </section>
+  {/* Contact Us Section */}
+  <section className="mb-5">
+    <h2 className="border-bottom pb-2 mb-4">Contact Us</h2>
+    <p className="text-muted">
+      If you have any questions or concerns, feel free to{" "}
+      <a href="mailto:contact@website.com" className="text-decoration-underline">
+        contact us
+      </a>
+      .
+    </p>
+  </section>
 
-        <section>
-          <h2>Contact Us</h2>
-          <p>
-            If you have any questions or concerns regarding our Terms and
-            Policy, feel free to{" "}
-            <a href="mailto:contact@website.com">contact us</a>.
-          </p>
-        </section>
-      </div>
-    
+  {/* Action Buttons */}
+  <div className="d-flex justify-content-center">
+    <button className="btn btn-primary me-3">Accept</button>
+    <button className="btn btn-outline-secondary">Decline</button>
+  </div>
+</div>
+
     </>
   );
 }

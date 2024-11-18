@@ -6,9 +6,6 @@ import SignupPage from '../SignupPage';
 import image from "../Image/rolling.png"
 import {Fade} from "react-awesome-reveal"
 import video from "../Image/video.mp4"
-import Features from './Features';
-import About from './About';
-import Contact from './Contact';
 import { Context } from '../Context/Context';
 
 function HomePage() {
@@ -20,7 +17,7 @@ function HomePage() {
 
   return (
     <>
-   <div className="home d-flex justify-content-around align-items-center">
+   <div className="home">
       {/* Video background */}
        <div className="video-background">
         <video autoPlay loop muted className="background-video">
@@ -31,10 +28,10 @@ function HomePage() {
       
 
       {/* Main Content */}
-      <div className="text-white h-fullscreen d-flex flex-column justify-content-between align-items-center p-5 text-center w-50">
-        <div className="container py-5 d-flex flex-column justify-content-between gap-4 align-items-center">
+      <div className="text-white d-flex flex-column justify-content-between align-items-center text-center w-50">
+        <div className="container d-flex flex-column justify-content-between gap-4 align-items-center">
           <Fade direction="left" cascade duration={3000}>
-            <h1 className="display-1 pb-3">Testfy Ai</h1>
+            <h1>Testfy</h1>
           </Fade>
           <Fade direction="left" cascade duration={4000} delay={1000}>
             <p className='para'>
@@ -51,19 +48,16 @@ function HomePage() {
 
       {/* Optional Image */}
       <div className="image">
-        <img src={image} alt="image" />
+        <img src={image} alt="image" style={{width:"100%"}}/>
       </div>
     </div>
       
       {/* Modal for Signup Page */}
-      <Modal show={openSignup} onHide={handlePopup} centered dialogClassName="modal-xl bg-blur">
-        <Modal.Body>
+      <Modal show={openSignup} onHide={handlePopup} centered dialogClassName="modal-lg" className='signup-modal'>
+        <Modal.Body className='modal-body'>
           <SignupPage/>
         </Modal.Body>
       </Modal>
-      {/* <About/>
-      <Features/>
-      <Contact/> */}
     </>
   );
 }
