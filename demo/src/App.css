@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 .header{
-  background-color: rgb(0, 0, 0);
-  transition: all 0.7s;
+  background-color: black;
+ z-index: 99;
+  transition: all 0.7s ease-in-out;
+  position: sticky;
 }
 
 .desktop-nav{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
@@ -19,13 +21,20 @@
   justify-content: start;
   gap: 20px;
   position: absolute;
-  top: 85px;
+  top: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.459);
-  width: 100%;
+  background-color: rgba(0, 0, 0, 0.685);
+  width: 50%;
   padding: 20px;
   height: 100vh;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+@media(max-width:500px){
+  .mobile-nav{
+    width: 100%;
+  }
 }
 
 .mobile-nav ul{
@@ -80,10 +89,11 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
     width: 100%;
     padding: 20px;
+    flex-wrap: wrap;
   }
+ 
 
   .home h1{
     font-size: 5rem;
@@ -96,10 +106,20 @@
     font-weight: bold;
   }
 
+
   .para{
     font-size: 1.2rem;
     color: white;
     text-shadow: 2px 2px 8px rgba(175, 40, 40, 0.5);
+  }
+
+  @media (max-width:515px){
+    .home h1{
+      font-size: 3rem;
+    }
+    .para{
+      font-size: 1rem;
+    }
   }
 
   .button{
@@ -149,10 +169,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     & img{
-      width: 300px;
-      animation: spin 10s linear infinite;
+     
+      animation: spin 13s linear infinite;
       transform-origin: center; 
     }
 }
@@ -168,11 +187,7 @@
   }
 
 
-  @media (max-width:1200px){
-    .home{
-      flex-wrap: wrap;
-    }
-  }
+
 
   /* about page start*/
 .about-page {
@@ -180,10 +195,14 @@
   color: #fff;
   padding: 30px;
   font-family: Arial, sans-serif;
-  width: 100%;
+  gap: 2rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
+.about-text{
+  width: 50%;
+}
 /* Heading Section */
 .about-text h2 {
   font-size: 1.5rem;
@@ -200,8 +219,7 @@
 
 .about-text p {
   font-size: 1rem;
-  line-height: 1.6;
-  max-width: 600px;
+  line-height: 1.5rem;
 }
 
 /* Image Section */
@@ -214,18 +232,18 @@
 }
 
 .about-image{
-  width: 350px;
   overflow: hidden;
   padding: 10px;
+  width: 350px;
 }
 
+
 .about-image >img {
- width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 8px;
-  opacity: 0;
   object-fit: fill;
-  animation: fadeIn 1.5s ease forwards;
+  overflow: hidden;
 }
 
 
@@ -233,18 +251,6 @@
 .about-button {
   margin-top: 40px;
   text-align: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .about-text p,h1,h2{
@@ -260,6 +266,18 @@
   animation: spin 10s linear infinite;
 }
 
+.about-gif>img{
+  animation: spin 10s linear infinite;
+}
+
+@media(max-width: 590px){
+  .about-text{
+    width: 100%;
+  }
+  .about-gif img{
+    width: 200px;
+  }
+}
 /* Features section start */
 
 .features {
@@ -375,7 +393,7 @@
 
 .login-form{
   color: white;
-  background: #0d0d0d59;
+  background: rgb(12, 12, 12);
   backdrop-filter: blur(5px);
 }
 
@@ -386,13 +404,13 @@
   }
 
   .custom-border {
-    width: 80%; /* Adjust width as needed */
-    height: 4px; /* Thickness of the border */
-    background-color: #000; /* Border color */
-    border-radius: 10px; /* Radius for rounded edges */
-    margin: 0 auto; /* Center the border */
+    width: 80%; 
+    height: 4px; 
+    background-color: #000; 
+    border-radius: 10px; 
+    margin: 0 auto; 
     position: absolute;
-    bottom: -10px; /* Position below the heading */
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
   }

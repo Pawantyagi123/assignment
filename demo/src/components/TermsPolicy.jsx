@@ -1,6 +1,4 @@
 import React from "react";
-import Footer from "./Layout/Footer";
-import Header from "./Layout/Header";
 
 export default function TermsPolicy() {
   return (
@@ -77,10 +75,10 @@ export default function TermsPolicy() {
   </section>
 
   {/* Action Buttons */}
-  <div className="d-flex justify-content-center">
+  {/* <div className="d-flex justify-content-center">
     <button className="btn btn-primary me-3">Accept</button>
     <button className="btn btn-outline-secondary">Decline</button>
-  </div>
+  </div> */}
 </div>
 
     </>

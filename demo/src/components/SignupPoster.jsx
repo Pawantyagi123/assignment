@@ -8,7 +8,7 @@ export default function SignupPoster() {
     <>
     <div className='d-flex justify-content-center align-items-center flex-column gap-2'>
       <img src={logo} alt="logo" style={{width:"100px", height: "100px",borderRadius: "50%"}}/>
-          <h2 className="mb-3 text-center">Welcome To Testfy*</h2>
+          <h2 className="mb-3 text-center fs-4">Welcome To Testfy*</h2>
           </div>
           <div>
             <img src={gif} alt="" className='img-gif'/>

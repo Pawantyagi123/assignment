@@ -21,7 +21,7 @@ export default function Header() {
   }
   return (
     <>
-      <header className="header px-4 py-2 sticky-top shadow-sm w-100">
+      <header className="header px-4 py-2 shadow-sm w-100">
   <div className="container-fluid d-flex align-items-center justify-content-between">
     <div className="d-flex align-items-center gap-2">
       <img src={logo} alt="logo" className="rounded-circle" style={{ width: "70px", height: "70px" }} />
@@ -29,6 +29,11 @@ export default function Header() {
     </div>
 
     <nav className={show ? "mobile-nav" : "desktop-nav"}>
+    {show ?
+      <button className="border-0 bg-transparent">
+      <RxCross1 onClick={showNav} className="fs-4 text-white"/> 
+      </button>
+      : ""}
       <ul className="nav gap-4 ">
         <li className="nav-item">
           <NavLink
@@ -82,7 +87,7 @@ export default function Header() {
       Login
     </NavLink>
     </nav>
-<div className="hamburger" onClick={showNav}>{show ? <RxCross1/> :<GiHamburgerMenu/>}</div>
+<div className="hamburger" onClick={showNav}>{show ? "" : <GiHamburgerMenu/>}</div>
   </div>
 </header>
 

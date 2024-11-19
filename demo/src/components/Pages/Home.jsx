@@ -29,21 +29,23 @@ function HomePage() {
 
       {/* Main Content */}
       <div className="text-white d-flex flex-column justify-content-between align-items-center text-center w-50">
-        <div className="container d-flex flex-column justify-content-between gap-4 align-items-center">
-          <Fade direction="left" cascade duration={3000}>
-            <h1>Testfy</h1>
+        <div className=" d-flex flex-column justify-content-between gap-4 align-items-center">
+          <Fade direction="left" cascade duration={4000}>
+            <h1>Testify</h1>
           </Fade>
-          <Fade direction="left" cascade duration={4000} delay={1000}>
+          <Fade direction="left" cascade duration={4000} delay={2000}>
             <p className='para'>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur natus molestias quis maxime amet quod laborum velit. Expedita, modi sed?
             </p>
           </Fade>
         </div>
+        <Fade direction="left" cascade duration={5000} delay={4000}>
         <div className="container py-3 d-flex align-items-center justify-content-center">
           <NavLink to="register" onClick={handlePopup} className="button">
             Join us
           </NavLink>
         </div>
+        </Fade>
       </div>
 
       {/* Optional Image */}

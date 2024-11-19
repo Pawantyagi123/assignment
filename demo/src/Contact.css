@@ -3,7 +3,7 @@
   width: 100%;
   margin: auto;
   height: 100%;
-  border-top: 1px solid white;
+  /* border-top: 1px solid white; */
 }
 
 /* Video Section */
@@ -25,7 +25,7 @@
 
 /* Form Section */
 .contact-details {
-  background-color: rgba(128, 128, 128, 0.455);
+ 
   border-radius: 10px;
   flex: 1;
   padding: 20px;
