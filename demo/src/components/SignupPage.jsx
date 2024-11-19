@@ -184,7 +184,7 @@ export default function SignupPage() {
                     <div className="mb-4 position-relative">
                       <FaPhoneAlt className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
                       <PhoneInput
-                country={formData.countryCode}
+                country={"in"}
                 value={formData.phone}
                 onChange={handlePhoneChange}
                 onBlur={() => validateField("phone", formData.phone, formData.countryCode)}
