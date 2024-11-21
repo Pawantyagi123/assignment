@@ -6,7 +6,9 @@ import SignupPage from '../SignupPage';
 import image from "../Image/rolling.png"
 import {Fade} from "react-awesome-reveal"
 import video from "../Image/video.mp4"
+import video1 from "../Image/home1.mp4"
 import { Context } from '../Context/Context';
+import anim from "../Image/home.mp4"
 
 function HomePage() {
  const {openSignup, setOpenSignup} = useContext(Context)
@@ -32,14 +34,15 @@ function HomePage() {
         <div className=" d-flex flex-column justify-content-between gap-4 align-items-center">
           <Fade direction="left" cascade duration={4000}>
             <h1>Testify</h1>
+            <h2>Test <span>Smarter</span>, Not <span>Harder</span></h2>
           </Fade>
-          <Fade direction="left" cascade duration={4000} delay={2000}>
+          <Fade direction="left" cascade duration={4000} delay={4000}>
             <p className='para'>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur natus molestias quis maxime amet quod laborum velit. Expedita, modi sed?
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, mollitia!
             </p>
           </Fade>
         </div>
-        <Fade direction="left" cascade duration={5000} delay={4000}>
+        <Fade direction="up" cascade duration={5000} delay={4000}>
         <div className="container py-3 d-flex align-items-center justify-content-center">
           <NavLink to="register" onClick={handlePopup} className="button">
             Join us
@@ -50,7 +53,9 @@ function HomePage() {
 
       {/* Optional Image */}
       <div className="image">
-        <img src={image} alt="image" style={{width:"100%"}}/>
+       <video autoPlay loop muted>
+        <source src={video1} type='video/mp4'/>
+       </video>
       </div>
     </div>
       

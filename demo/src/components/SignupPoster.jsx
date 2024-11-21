@@ -6,7 +6,7 @@ import gif from "./Image/robo.gif"
 export default function SignupPoster() {
   return (
     <>
-    <div className='d-flex justify-content-center align-items-center flex-column gap-2'>
+    <div className='d-flex justify-content-center align-items-center flex-column gap-2 w-100'>
       <img src={logo} alt="logo" style={{width:"100px", height: "100px",borderRadius: "50%"}}/>
           <h2 className="mb-3 text-center fs-4">Welcome To Testfy*</h2>
           </div>

@@ -19,7 +19,7 @@ export default function Features() {
         <h1>Features</h1>
         <div
           className="marquee-container"
-          style={{ backgroundColor: "black", color: "white", padding: "10px" }}
+          style={{ color: "white", padding: "10px" }}
         >
           <Marquee speed={40} gradient={false}>
             {features.map((feature, index) => (

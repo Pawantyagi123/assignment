@@ -44,87 +44,98 @@ export default function LoginPage() {
   return (
     <>
       {openLogin ? (
-        <div className="d-flex justify-content-center align-items-center h-auto bg-transparent">
-          <div className="row w-100" style={{ maxWidth: "900px" }}>
-            {/* Left side with blue background */}
-            <div className="col-md-6 bg-transparent text-white d-flex justify-content-center align-items-center p-4 flex-column">
-              <img
-                src={logo}
-                alt="logo"
-                style={{ width: "100px", height: "100px", borderRadius: "50%" }}
-              />
-              <h2 className="text-center">Welcome Back</h2>
-              <img
-                src={image}
-                alt=""
-                style={{ width: "300px" }}
-                className="login-gif"
-              />
-            </div>
-
-            {/* Right side with form */}
-            <div className="col-md-6 p-4 rounded login-form">
-              <h1 className="text-center mb-4" style={{ fontWeight: "bolder" }}>
-                Login
-              </h1>
-
-              <form onSubmit={handleSubmit}>
-                {/* Email Input */}
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label fs-5">
-                    <MdEmail />
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    value={data.email}
-                    onChange={handleInput}
-                    required
-                  />
-                </div>
-
-                {/* Password Input */}
-                <div className="mb-3">
-                  <label htmlFor="password" className="form-label fs-5">
-                    <FaLock />
-                  </label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    id="password"
-                    name="password"
-                    placeholder="Enter your password"
-                    value={data.password}
-                    onChange={handleInput}
-                    required
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <button type="submit" className="btn btn-dark w-100">
-                  Login
-                </button>
-              </form>
-
-              {/* Links Section */}
-              <div className="d-flex justify-content-between align-items-center mt-3">
-                <NavLink to={"#"} className=" text-white">
-                  Forgot Password?
-                </NavLink>
-                <NavLink
-                  to={"register"}
-                  className="text-white"
-                  onClick={handleSignup}
-                >
-                  No account? Signup
-                </NavLink>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+       <div className="login-page">
+         {/* Left side with blue background */}
+         <div className="bg-transparent text-white d-flex justify-content-center align-items-center p-4 flex-column">
+           <img
+             src={logo}
+             alt="logo"
+             style={{ width: "100px", height: "100px", borderRadius: "50%" }}
+           />
+           <h2 className="text-center">Welcome Back</h2>
+           <img
+             src={image}
+             alt=""
+             style={{ width: "300px" }}
+             className="login-gif"
+           />
+         </div>
+     
+         {/* Right side with form */}
+         <div className="p-4 rounded login-form">
+           <h1 className="text-center mb-4" style={{ fontWeight: "bolder" }}>
+             Login
+           </h1>
+     
+           <form onSubmit={handleSubmit}>
+             {/* Email Input */}
+             <div className="mb-3">
+               <label htmlFor="email" className="form-label fs-5">
+                 Email
+               </label>
+               <div className="input-group">
+                 <span className="input-group-text">
+                   <MdEmail />
+                 </span>
+                 <input
+                   type="email"
+                   className="form-control"
+                   id="email"
+                   name="email"
+                   placeholder="Enter your email"
+                   value={data.email}
+                   onChange={handleInput}
+                   required
+                 />
+               </div>
+             </div>
+     
+             {/* Password Input */}
+             <div className="mb-3">
+               <label htmlFor="password" className="form-label fs-5">
+                 Password
+               </label>
+               <div className="input-group">
+                 <span className="input-group-text">
+                   <FaLock />
+                 </span>
+                 <input
+                   type="password"
+                   className="form-control"
+                   id="password"
+                   name="password"
+                   placeholder="Enter your password"
+                   value={data.password}
+                   onChange={handleInput}
+                   required
+                 />
+               </div>
+             </div>
+     
+             {/* Submit Button */}
+             <button type="submit" className="btn btn-dark w-100">
+               Login
+             </button>
+           </form>
+     
+           {/* Links Section */}
+           <div className="d-flex justify-content-between align-items-center mt-3">
+             <NavLink to={"#"} className=" text-white">
+               Forgot Password?
+             </NavLink>
+             <NavLink
+               to={"register"}
+               className="text-white"
+               onClick={handleSignup}
+             >
+               No account? Signup
+             </NavLink>
+           </div>
+         </div>
+       </div>
+     
+     
       ) : (
         ""
       )}

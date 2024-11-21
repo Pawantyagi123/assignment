@@ -133,247 +133,216 @@ export default function SignupPage() {
   return (
     <>
       {openSignup ? (
-        <Container fluid className="signup-container">
-          <Row>
+        <div  className="signup-container">
             <Col md={6} className="signup p-4 text-white">
               <SignupPoster />
             </Col>
 
-            <Col md={6} className="signup-form py-3 bg-dark shadow rounded text-white">
+            <Col className="signup-page py-3 bg-dark shadow rounded text-white">
               <h1 className="text-center text-primary fw-bold mb-4">Sign Up</h1>
 
               <form onSubmit={handleSubmit} className="signup-form bg-transparent">
-                {page === 1 && (
-                  <>
-                    <div className="mb-4 position-relative">
-                      <FaUserAlt className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-                      <input
-                        type="text"
-                        className="form-control ps-5 pe-5 rounded-pill"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        onBlur={handleBlur}
-                        placeholder="Enter your name"
-                      />
-                      {renderValidationIcon("name")}
-                      {errors.name && (
-                        <p className="text-danger small text-center">{errors.name}</p>
-                      )}
-                    </div>
+  {/* Page 1: Personal Details */}
+  {page === 1 && (
+    <>
+      {/* Name Input */}
+      <div className="mb-4 position-relative">
+        <FaUserAlt className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
+        <input
+          type="text"
+          className="form-control ps-5 pe-5 rounded-pill"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange}
+          onBlur={handleBlur}
+          placeholder="Enter your name"
+        />
+        {renderValidationIcon("name")}
+        {errors.name && <p className="text-danger small text-center">{errors.name}</p>}
+      </div>
 
-                    <div className="mb-4 position-relative">
-                      <MdEmail className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-                      <input
-                        type="email"
-                        className="form-control ps-5 pe-5 rounded-pill"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        onBlur={handleBlur}
-                        placeholder="Enter your email"
-                      />
-                      {renderValidationIcon("email")}
-                      {errors.email && (
-                        <p className="text-danger small text-center">{errors.email}</p>
-                      )}
-                    </div>
+      {/* Email Input */}
+      <div className="mb-4 position-relative">
+        <MdEmail className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
+        <input
+          type="email"
+          className="form-control ps-5 pe-5 rounded-pill"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange}
+          onBlur={handleBlur}
+          placeholder="Enter your email"
+        />
+        {renderValidationIcon("email")}
+        {errors.email && <p className="text-danger small text-center">{errors.email}</p>}
+      </div>
 
-                    <div className="mb-4 position-relative">
-                      <FaPhoneAlt className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-                      <PhoneInput
-                country={"in"}
-                value={formData.phone}
-                onChange={handlePhoneChange}
-                onBlur={() => validateField("phone", formData.phone, formData.countryCode)}
-                inputProps={{
-                  className: "form-control ps-5 pe-5 rounded-pill",
-                  placeholder: "Enter your phone number",
-                }}
-              />
-                      {renderValidationIcon("phone")}
-                      {errors.phone && (
-                        <p className="text-danger small text-center">{errors.phone}</p>
-                      )}
-                    </div>
+      {/* Phone Input */}
+      <div className="mb-4 position-relative">
+        <FaPhoneAlt className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
+        <PhoneInput
+          country={"in"}
+          value={formData.phone}
+          onChange={handlePhoneChange}
+          onBlur={() => validateField("phone", formData.phone, formData.countryCode)}
+          inputProps={{
+            className: "form-control ps-5 pe-5 rounded-pill",
+            placeholder: "Enter your phone number",
+          }}
+        />
+        {renderValidationIcon("phone")}
+        {errors.phone && <p className="text-danger small text-center">{errors.phone}</p>}
+      </div>
 
-                    <div className="d-flex justify-content-center">
-                      {
-                        validateForm ?  <button
-                        type="button"
-                        className="btn btn-primary rounded-sm-pill shadow-sm"
-                        onClick={nextPage}
-                      >
-                        Next
-                      </button>
-                    : ""
-                      }
-                       </div>
-                     
-                  </>
-                )}
-                {page === 2 && (
-                  <>
-                    <div className="mb-4 position-relative">
-                      <FaBuilding className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-                      <input
-                        type="text"
-                        className="form-control ps-5 rounded-pill"
-                        id="companyName"
-                        name="companyName"
-                        value={formData.companyName}
-                        onChange={handleInputChange}
-                        required
-                        placeholder="Enter your company name"
-                      />
-                      {renderValidationIcon("companyName")}
-                      {errors.companyName && (
-                        <p className="text-danger small text-center">
-                          {errors.companyName}
-                        </p>
-                      )}
-                    </div>
+      {/* Next Button */}
+      <div className="d-flex justify-content-center">
+        {validateForm && (
+          <button type="button" className="btn btn-primary rounded-sm-pill shadow-sm" onClick={nextPage}>
+            Next
+          </button>
+        )}
+      </div>
+    </>
+  )}
 
-                    <div className="mb-4 position-relative">
-                      <FaLink className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-                      <input
-                        type="url"
-                        className="form-control ps-5 rounded-pill"
-                        id="companyUrl"
-                        name="companyUrl"
-                        value={formData.companyUrl}
-                        onChange={handleInputChange}
-                        required
-                        placeholder="Enter your company URL"
-                      />
-                      {renderValidationIcon("companyUrl")}
-                      {errors.companyUrl && (
-                        <p className="text-danger small text-center">{errors.companyUrl}</p>
-                      )}
-                    </div>
+  {/* Page 2: Company Details */}
+  {page === 2 && (
+    <>
+      {/* Company Name Input */}
+      <div className="mb-4 position-relative">
+        <FaBuilding className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
+        <input
+          type="text"
+          className="form-control ps-5 rounded-pill"
+          id="companyName"
+          name="companyName"
+          value={formData.companyName}
+          onChange={handleInputChange}
+          required
+          placeholder="Enter your company name"
+        />
+        {renderValidationIcon("companyName")}
+        {errors.companyName && <p className="text-danger small text-center">{errors.companyName}</p>}
+      </div>
 
-                    <div className="mb-4 position-relative">
-                      <FaServicestack className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-                      <select
-                        className="form-select ps-5 rounded-pill"
-                        id="services"
-                        name="services"
-                        value={formData.services}
-                        onChange={handleInputChange}
-                        required
-                  
-                      >
-                        <option value="">Select a service</option>
-                        <option value="Service1">Service 1</option>
-                        <option value="Service2">Service 2</option>
-                        <option value="Service3">Service 3</option>
-                      </select>
-                    </div>
+      {/* Company URL Input */}
+      <div className="mb-4 position-relative">
+        <FaLink className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
+        <input
+          type="url"
+          className="form-control ps-5 rounded-pill"
+          id="companyUrl"
+          name="companyUrl"
+          value={formData.companyUrl}
+          onChange={handleInputChange}
+          required
+          placeholder="Enter your company URL"
+        />
+        {renderValidationIcon("companyUrl")}
+        {errors.companyUrl && <p className="text-danger small text-center">{errors.companyUrl}</p>}
+      </div>
 
-                    <div className="d-flex justify-content-between">
-                      <button
-                        type="button"
-                        className="btn btn-secondary rounded-sm-pill"
-                        onClick={prevPage}
-                      >
-                        Prev
-                      </button>
-                      <button
-                        type="button"
-                        className="btn btn-primary rounded-sm-pill"
-                        onClick={nextPage}
-                      >
-                        Next
-                      </button>
-                    </div>
-                  </>
-                )}
+      {/* Services Select */}
+      <div className="mb-4 position-relative">
+        <FaServicestack className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
+        <select
+          className="form-select ps-5 rounded-pill"
+          id="services"
+          name="services"
+          value={formData.services}
+          onChange={handleInputChange}
+          required
+        >
+          <option value="">Select a service</option>
+          <option value="Service1">Service 1</option>
+          <option value="Service2">Service 2</option>
+          <option value="Service3">Service 3</option>
+        </select>
+      </div>
 
-                {/* Page 3 */}
-                {page === 3 && (
-                  <>
-                    <div className="mb-4 position-relative">
-                      <FaLock className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-                      <input
-                        type="password"
-                        className="form-control ps-5 rounded-pill"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleInputChange}
-                        required
-                        placeholder="Enter your password"
-                      />
-                      {renderValidationIcon("password")}
-                      {errors.password && (
-                        <p className="text-danger small text-center">{errors.password}</p>
-                      )}
-                    </div>
+      {/* Navigation Buttons */}
+      <div className="d-flex justify-content-between">
+        <button type="button" className="btn btn-secondary rounded-sm-pill" onClick={prevPage}>
+          Prev
+        </button>
+        <button type="button" className="btn btn-primary rounded-sm-pill" onClick={nextPage}>
+          Next
+        </button>
+      </div>
+    </>
+  )}
 
-                    <div className="mb-4 position-relative">
-                      <FaLock className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-                      <input
-                        type="password"
-                        className="form-control ps-5 rounded-pill"
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        value={formData.confirmPassword}
-                        onChange={handleInputChange}
-                        required
-                        placeholder="Confirm your password"
-                      />
-                      {renderValidationIcon("confirmPassword")}
-                      {errors.confirmPassword && (
-                        <p className="text-danger small text-center">
-                          {errors.confirmPassword}
-                        </p>
-                      )}
-                    </div>
+  {/* Page 3: Password Details */}
+  {page === 3 && (
+    <>
+      {/* Password Input */}
+      <div className="mb-4 position-relative">
+        <FaLock className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
+        <input
+          type="password"
+          className="form-control ps-5 rounded-pill"
+          id="password"
+          name="password"
+          value={formData.password}
+          onChange={handleInputChange}
+          required
+          placeholder="Enter your password"
+        />
+        {renderValidationIcon("password")}
+        {errors.password && <p className="text-danger small text-center">{errors.password}</p>}
+      </div>
 
-                    <div className="form-check mb-4">
-                      <input
-                        type="checkbox"
-                        className="form-check-input"
-                        id="termsAccepted"
-                        name="termsAccepted"
-                        checked={formData.termsAccepted}
-                        onChange={handleInputChange}
-                        required
-                      />
-                      <label
-                        htmlFor="termsAccepted"
-                        className="form-check-label"
-                      >
-                        I agree to the{" "}
-                        <NavLink
-                          to={"/termsandPolicy"}
-                          className="text-primary"
-                        >
-                          Terms and Policy
-                        </NavLink>
-                      </label>
-                    </div>
+      {/* Confirm Password Input */}
+      <div className="mb-4 position-relative">
+        <FaLock className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
+        <input
+          type="password"
+          className="form-control ps-5 rounded-pill"
+          id="confirmPassword"
+          name="confirmPassword"
+          value={formData.confirmPassword}
+          onChange={handleInputChange}
+          required
+          placeholder="Confirm your password"
+        />
+        {renderValidationIcon("confirmPassword")}
+        {errors.confirmPassword && <p className="text-danger small text-center">{errors.confirmPassword}</p>}
+      </div>
 
-                    <div className="d-flex justify-content-between">
-                      <button
-                        type="button"
-                        className="btn btn-secondary rounded-sm"
-                        onClick={prevPage}
-                      >
-                        Prev
-                      </button>
-                      <button
-                        type="submit"
-                        className="btn btn-success rounded-sm"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                    </>
-                )}
-              </form>
+      {/* Terms and Conditions */}
+      <div className="form-check mb-4">
+        <input
+          type="checkbox"
+          className="form-check-input"
+          id="termsAccepted"
+          name="termsAccepted"
+          checked={formData.termsAccepted}
+          onChange={handleInputChange}
+          required
+        />
+        <label htmlFor="termsAccepted" className="form-check-label">
+          I agree to the{" "}
+          <NavLink to={"/termsandPolicy"} className="text-primary">
+            Terms and Policy
+          </NavLink>
+        </label>
+      </div>
+
+      {/* Navigation Buttons */}
+      <div className="d-flex justify-content-between">
+        <button type="button" className="btn btn-secondary rounded-sm" onClick={prevPage}>
+          Prev
+        </button>
+        <button type="submit" className="btn btn-success rounded-sm">
+          Submit
+        </button>
+      </div>
+    </>
+  )}
+</form>
+
               <p className="text-center mt-4">
                 Have an account?{" "}
                 <NavLink
@@ -385,8 +354,8 @@ export default function SignupPage() {
                 </NavLink>
               </p>
             </Col>
-          </Row>
-        </Container>
+         
+        </div>
       ) : null}
     </>
   );

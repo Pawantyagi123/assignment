@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import LoginPage from "../LoginPage";
 import { useContext, useState } from "react";
-import { Modal} from 'react-bootstrap';
+import { Modal, ModalHeader, ModalTitle} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Context } from "../Context/Context";
 import logo from "../Image/testfy (1).png";
@@ -11,7 +11,6 @@ import { RxCross1 } from "react-icons/rx";
 export default function Header() {
   const [show, setShow ] = useState(false)
   const {openLogin, setOpenLogin} = useContext(Context)
-
   const showNav = () =>{
     setShow(!show)
   }
@@ -91,8 +90,9 @@ export default function Header() {
   </div>
 </header>
 
-<Modal show={openLogin} onHide={openPage} centered dialogClassName="modal-lg" className="login-modal">
+<Modal show={openLogin} onHide={openPage}  centered dialogClassName="modal-lg" className="login-modal">
         <Modal.Body className="modal-body">
+        <Modal.Header closeButton className="bg-secondary rounded border-0 text-white-50"></Modal.Header>
           <LoginPage />
         </Modal.Body>
       </Modal>

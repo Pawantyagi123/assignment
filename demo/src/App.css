@@ -1,12 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 .header{
   background-color: black;
  z-index: 99;
   transition: all 0.7s ease-in-out;
   position: sticky;
+  width: 100%;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  border-bottom: 1px solid rgb(81, 150, 215);
 }
 
+span{
+  color: rgb(89, 108, 218);
+}
 .desktop-nav{
   display: flex;
   justify-content: space-between;
@@ -31,12 +43,10 @@
   z-index: 1;
 }
 
-@media(max-width:500px){
-  .mobile-nav{
-    width: 100%;
-  }
+li{
+  font-size: 20px;
+  letter-spacing: 2px;
 }
-
 .mobile-nav ul{
   display: flex;
   flex-direction: column;
@@ -85,13 +95,13 @@
   /* Home Page */
   .home {
     position: relative;
-    height: 100vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     padding: 20px;
     flex-wrap: wrap;
+    height: 80vh;
   }
  
 
@@ -100,17 +110,32 @@
      box-shadow: 0px 0px 20px white;
     letter-spacing: 2px;
     border: 2px solid white;
-    color: rgb(32, 30, 30);
-    background-color: white;
+    color: transparent;
+    background: linear-gradient(to right,red,rgb(0, 115, 255));
     border-radius: 5px;
-    font-weight: bold;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    padding: 5px 10px;
+    font-style: normal;
+    background-clip: text;
   }
 
+  .home h2{
+    font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  }
 
   .para{
     font-size: 1.2rem;
     color: white;
     text-shadow: 2px 2px 8px rgba(175, 40, 40, 0.5);
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
   }
 
   @media (max-width:515px){
@@ -176,7 +201,6 @@
     }
 }
 
-  
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -185,9 +209,6 @@
       transform: rotate(360deg);
     }
   }
-
-
-
 
   /* about page start*/
 .about-page {
@@ -204,6 +225,13 @@
   width: 50%;
 }
 /* Heading Section */
+
+.about-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
 .about-text h2 {
   font-size: 1.5rem;
   color: #4a90e2;
@@ -211,11 +239,6 @@
   text-align: center;
 }
 
-.about-text h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
 
 .about-text p {
   font-size: 1rem;
@@ -253,22 +276,14 @@
   text-align: center;
 }
 
-.about-text p,h1,h2{
-  font-family: "Doto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
-  font-style: normal;
-  font-variation-settings:
-    "ROND" 0;
-}
 
 .gif-image{
   animation: spin 10s linear infinite;
 }
 
-.about-gif>img{
+/* .about-gif>img{
   animation: spin 10s linear infinite;
-}
+} */
 
 @media(max-width: 590px){
   .about-text{
@@ -284,9 +299,15 @@
   padding: 20px;
   text-align: center;
   color: white;
-  background-color: #000;
+ background: black;
   height: auto;
   width: 100%;
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
 }
 
 .features h1 {
@@ -299,7 +320,8 @@
   overflow: hidden;
   white-space: nowrap;
   padding: 10px;
- 
+  background: linear-gradient(40deg,rgba(255, 0, 0, 0.518),rgba(0, 0, 255, 0.414));
+  backdrop-filter: blur(10px);
 }
 
 .marquee-container marquee {
@@ -328,6 +350,12 @@
   cursor: pointer;
 }
 
+.signup-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
 .signup{
   background: transparent;
@@ -338,7 +366,6 @@
   text-align: center;
 }
 
-
 .signup-form {
   background-color: #f9f9f9;
   border-radius: 15px;
@@ -348,9 +375,6 @@
 
 .signup-form .form-control {
   height: 45px;
-  font-size: 1rem;
-  border: 1px solid #ced4da;
-  border-radius: 50px;
 }
 
 .signup-form .form-control:focus {
@@ -367,18 +391,20 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.phone-input-container {
-  width: 100%;
+
+.react-tel-input .form-control{
+  width: 100% !important;
 }
 
-.phone-input-container .form-control {
-  padding-left: 40px;
+.signup-page{
+  width: 100%;
 }
 
 
 
 .signup-modal,.login-modal{
   backdrop-filter: blur(6px);
+  width: 100%;
 }
 
 .modal-body{
@@ -388,20 +414,23 @@
   background-size: cover;
   border: 1px solid white;
   border-radius: 5px;
-  padding: none;
+  z-index: 1;
 }
 
 .login-form{
   color: white;
   background: rgb(12, 12, 12);
   backdrop-filter: blur(5px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+ gap: 25px;
 }
-
-@media (max-width:990px){
-  .signup .img-gif,.poster-text,.login-gif{
-    display: none;
-  }
-  }
+.login-page{
+  display: flex;
+ justify-content: space-around;
+ align-items: center;
+}
 
   .custom-border {
     width: 80%; 
@@ -414,4 +443,21 @@
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
+
+  @media(max-width:456px){
+    .home{
+      height: 100vh;
+    }
+  }
+
+  @media(max-width:768px){
+    .about-text{
+      width: 100%;
+    }
+    .about-text h1{
+      font-size: 2rem;
+    }
+
+
+  }

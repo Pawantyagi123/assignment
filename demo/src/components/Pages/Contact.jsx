@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaUserAlt,FaPhoneAlt, FaEnvelope  } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import video from "../Image/contact.webm"
+import video from "../Image/Contact Us (1).mp4"
 import { FaLocationDot,FaPhone } from "react-icons/fa6";
 
 export default function Contact() {
@@ -14,16 +14,6 @@ export default function Contact() {
       <source src={video} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    <div className='text-white'>
-      <h2 className='d-flex justify-content-center align-items-center gap-3 fs-5'><span><FaLocationDot/></span> Our Office Location </h2>
-      <p>The Interior Design Studio Company</p>
-      <p>The Courtyard, ​Al Quoz 1,​ Colorado, ​ USA</p>
-    </div>
-    <div className='text-white'>
-      <h2 className='d-flex justify-content-center align-items-center gap-3 fs-5'><span><FaPhone/></span>
-      Phone (Landline)</h2>
-      <p> +1 123 456 7890</p>
-    </div>
   </div>
 
   {/* Contact Form Section */}

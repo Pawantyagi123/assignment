@@ -17,7 +17,7 @@ export default function About() {
     </div>
 
       <div className='about-gif'>
-        <img src={gif} alt="Developer Coding" width={"300px"}/>
+        <img src={gif} alt="Developer Coding" width={"250px"}/>
       </div>
 
   </div>
