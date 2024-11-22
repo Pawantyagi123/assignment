@@ -141,7 +141,7 @@ export default function SignupPage() {
             <Col className="signup-page py-3 bg-dark shadow rounded text-white">
               <h1 className="text-center text-primary fw-bold mb-4">Sign Up</h1>
 
-              <form onSubmit={handleSubmit} className=" bg-transparent p-4">
+              <form onSubmit={handleSubmit} className="bg-transparent p-4 d-flex gap-4 flex-column">
   {/* Page 1: Personal Details */}
   {page === 1 && (
     <>

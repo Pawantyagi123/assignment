@@ -2,7 +2,7 @@ import React from 'react';
 import { FaUserAlt,FaPhoneAlt, FaEnvelope  } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import video from "../Image/Contact Us (1).mp4"
-import { FaLocationDot,FaPhone } from "react-icons/fa6";
+
 
 export default function Contact() {
   return (

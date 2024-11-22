@@ -3,12 +3,11 @@ import { Modal} from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import SignupPage from '../SignupPage';
-import image from "../Image/rolling.png"
 import {Fade} from "react-awesome-reveal"
 import video from "../Image/video.mp4"
 import video1 from "../Image/home1.mp4"
 import { Context } from '../Context/Context';
-import anim from "../Image/home.mp4"
+
 
 function HomePage() {
  const {openSignup, setOpenSignup} = useContext(Context)

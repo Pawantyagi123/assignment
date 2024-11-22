@@ -142,8 +142,6 @@ li{
     font-style: normal;
   }
 
-
-
   .button{
     color: white;
    height: 50px;
@@ -284,8 +282,6 @@ li{
   animation: spin 10s linear infinite;
 }
 
-
-
 /* Features section start */
 
 .features {
@@ -398,7 +394,6 @@ li{
   border: 1px solid white;
   border-radius: 5px;
   z-index: 1;
-  height: auto;
 }
 
 .login-form{
@@ -488,6 +483,8 @@ li{
 
     .modal-body{
       padding: 0px !important;
+      height: auto;
+      border: none;
     }
   }
 

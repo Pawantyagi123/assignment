@@ -44,7 +44,6 @@ export default function LoginPage() {
   return (
     <>
       {openLogin ? (
-      
        <div className="login-page">
          {/* Left side with blue background */}
          <div className="bg-transparent text-white d-flex justify-content-center align-items-center p-4 flex-column">
