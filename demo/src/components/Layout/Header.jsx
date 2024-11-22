@@ -20,7 +20,7 @@ export default function Header() {
   }
   return (
     <>
-      <header className="header px-4 py-2 shadow-sm w-100">
+      <header className="header px-2 py-2 shadow-sm w-100">
   <div className="container-fluid d-flex align-items-center justify-content-between">
     <div className="d-flex align-items-center gap-2">
       <img src={logo} alt="logo" className="rounded-circle" style={{ width: "70px", height: "70px" }} />
@@ -29,9 +29,11 @@ export default function Header() {
 
     <nav className={show ? "mobile-nav" : "desktop-nav"}>
     {show ?
+    <div className="w-100">
       <button className="border-0 bg-transparent">
       <RxCross1 onClick={showNav} className="fs-4 text-white"/> 
       </button>
+      </div>
       : ""}
       <ul className="nav gap-4 ">
         <li className="nav-item">
@@ -39,7 +41,7 @@ export default function Header() {
             to="/"
              aria-current="page"
             className={({ isActive }) =>
-              `nav-link ${isActive ? "text-white fw-bold border-bottom border-primary" : "text-primary"}`
+              `nav-link ${isActive ? "text-white fw-bold border-bottom border-danger" : "text-primary"}`
             }
           >
             Home
@@ -50,7 +52,7 @@ export default function Header() {
             to="/about"
             aria-current="page"
             className={({ isActive }) =>
-              `nav-link ${isActive ? "text-white fw-bold border-bottom border-primary" : "text-primary"}`
+              `nav-link ${isActive ? "text-white fw-bold border-bottom border-danger" : "text-primary"}`
             }
           >
             About
@@ -61,7 +63,7 @@ export default function Header() {
             to="/features"
              aria-current="page"
             className={({ isActive }) =>
-              `nav-link ${isActive ? "text-white fw-bold border-bottom border-primary" : "text-primary"}`
+              `nav-link ${isActive ? "text-white fw-bold border-bottom border-danger" : "text-primary"}`
             }
           >
             Features
@@ -72,7 +74,7 @@ export default function Header() {
             to="/contact"
              aria-current="page"
             className={({ isActive }) =>
-              `nav-link ${isActive ? "text-white fw-bold border-bottom border-primary" : "text-primary"}`
+              `nav-link ${isActive ? "text-white fw-bold border-bottom border-danger" : "text-primary"}`
             }
           >
             Contact

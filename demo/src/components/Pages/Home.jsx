@@ -30,7 +30,7 @@ function HomePage() {
       
 
       {/* Main Content */}
-      <div className="text-white d-flex flex-column justify-content-between align-items-center text-center w-50">
+      <div className="text-white d-flex flex-column justify-content-between align-items-center text-center">
         <div className=" d-flex flex-column justify-content-between gap-4 align-items-center">
           <Fade direction="left" cascade duration={4000}>
             <h1>Testify</h1>
@@ -62,6 +62,7 @@ function HomePage() {
       {/* Modal for Signup Page */}
       <Modal show={openSignup} onHide={handlePopup} centered dialogClassName="modal-lg" className='signup-modal'>
         <Modal.Body className='modal-body'>
+        <Modal.Header closeButton className="bg-secondary rounded border-0 text-white-50"></Modal.Header>
           <SignupPage/>
         </Modal.Body>
       </Modal>

@@ -10,7 +10,7 @@ export default function SignupPoster() {
       <img src={logo} alt="logo" style={{width:"100px", height: "100px",borderRadius: "50%"}}/>
           <h2 className="mb-3 text-center fs-4">Welcome To Testfy*</h2>
           </div>
-          <div>
+          <div className='poster-img'>
             <img src={gif} alt="" className='img-gif'/>
           </div>
           <div className='poster-text'>
