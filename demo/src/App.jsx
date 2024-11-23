@@ -5,12 +5,14 @@ import Contact from "./components/Pages/Contact";
 import Features from "./components/Pages/Features";
 import Home from "./components/Pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import TermsPolicy from "./components/TermsPolicy";
+import TermsPolicy from "./components/Pages/TermsPolicy";
 import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
 import MainLayout from "./components/MainLayout";
 import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
           </Route>
           <Route path="/termsandPolicy" element={<TermsPolicy />} />
         </Routes>
+      <ToastContainer/>
         <Footer />
       </Router>
     </>

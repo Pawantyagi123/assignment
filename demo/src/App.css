@@ -40,7 +40,7 @@ span{
   padding: 20px;
   height: 100vh;
   backdrop-filter: blur(5px);
-  z-index: 1;
+  z-index: 99;
 }
 
 .mobile-nav ul{
@@ -59,7 +59,28 @@ li{
 .hamburger{
   display: none;
   color: white;
-  font-size: 25px;
+  border: none;
+  border-right: none;
+ position: absolute;
+ right: 0;
+  width: 40px;
+  height: 30px;
+  text-align: center;
+ border-top-left-radius: 30px;
+ border-bottom-left-radius: 30px;
+ background: linear-gradient(40deg, rgb(0, 217, 255),blue);
+}
+
+
+.inner{
+  position: absolute;
+  left: 0;
+   width: 40px;
+   height: 30px;
+   text-align: center;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background: linear-gradient(40deg, rgb(0, 217, 255),blue);
 }
 
 @media (max-width: 950px){
@@ -104,7 +125,6 @@ li{
     align-items: center;
     width: 100%;
     padding: 20px;
-    flex-wrap: wrap;
     height: 80vh;
   }
  
@@ -273,19 +293,20 @@ li{
 }
 
 .about-gif{
-  border: 2px solid rgb(52, 49, 49);
+  border: none;
   border-radius: 50%;
-  box-shadow: inset 0px 0px 30px skyblue;
+  box-shadow: inset 0px 0px 40px skyblue;
   height: auto;
 }
 .about-gif>img{
   animation: spin 10s linear infinite;
 }
 
+
 /* Features section start */
 
 .features {
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   color: white;
  background: black;
@@ -309,8 +330,8 @@ li{
   overflow: hidden;
   white-space: nowrap;
   padding: 10px;
-  background: linear-gradient(40deg,rgba(255, 0, 0, 0.518),rgba(0, 0, 255, 0.414));
-  backdrop-filter: blur(10px);
+  background: linear-gradient(40deg,rgba(0, 0, 0, 0.388),rgba(255, 255, 255, 0.382));
+ 
 }
 
 
@@ -426,6 +447,7 @@ li{
   @media (max-width: 1000px) {
     .home{
       height: auto;
+      flex-wrap: wrap;
     }
     .para {
       font-size: 0.9rem;
@@ -486,13 +508,10 @@ li{
       height: auto;
       border: none;
     }
+   
   }
-
-
   @media(max-width:768px){
     .about-text{
       width: 100%;
     }
-   
-
   }

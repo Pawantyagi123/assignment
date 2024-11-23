@@ -1,10 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaUserAlt,FaPhoneAlt, FaEnvelope  } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import video from "../Image/Contact Us (1).mp4"
+import { toast } from 'react-toastify';
+
 
 
 export default function Contact() {
+  const [contactDetail, setContactDetail] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  })
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setContactDetail((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(contactDetail);
+    setContactDetail({
+      name: "",
+      email: "",
+      phone: "",
+      message: ""
+    })
+    toast.success("message sent successfully")
+  }
   return (
   <>
    <div className="contact-wrapper d-flex justify-content-between gap-4 p-4 bg-black">
@@ -24,15 +51,18 @@ export default function Contact() {
     </p>
 
     {/* Contact Form */}
-    <form className="contact-form mx-auto w-100" style={{ maxWidth: "350px" }}>
+    <form className="contact-form mx-auto w-100" style={{ maxWidth: "350px" }} onSubmit={handleSubmit}>
       <div className='d-flex gap-2'>
         <label htmlFor="name"><FaUserAlt/></label>
       <input
         type="text"
         id='name'
+        name='name'
         placeholder="Your Name"
         className="form-control rounded-pill p-2 shadow-sm mb-3"
         required
+        onChange={handleInput}
+        value={contactDetail.name}
       />
       </div>
       <div className='d-flex gap-2 '>
@@ -40,9 +70,12 @@ export default function Contact() {
       <input
         type="email"
         id='email'
+        name='email'
         placeholder="Your Email"
         className="form-control rounded-pill p-2 shadow-sm mb-3"
         required
+        onChange={handleInput}
+        value={contactDetail.email}
       />
       </div>
       <div className='d-flex gap-2'>
@@ -50,18 +83,25 @@ export default function Contact() {
       <input
         type="tel"
         id='phone'
+        name='phone'
         placeholder="Your Phone Number"
         className="form-control rounded-pill p-2 shadow-sm mb-3"
         required
+        value={contactDetail.phone}
+        onChange={handleInput}
       />
       </div>
       <div className='d-flex gap-2'>
         <label htmlFor="message"><FaEnvelope/></label>
       <textarea
         placeholder="Your Message"
+        id='message'
+        name='message'
         className="form-control rounded-3 p-2 shadow-sm mb-3"
         rows="3"
         required
+        value={contactDetail.message}
+        onChange={handleInput}
       ></textarea>
       </div>
       <div className='d-flex justify-content-center px-2'>

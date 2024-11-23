@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
 import LoginPage from "../LoginPage";
 import { useContext, useState } from "react";
-import { Modal, ModalHeader, ModalTitle} from 'react-bootstrap';
+import { Modal} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Context } from "../Context/Context";
 import logo from "../Image/testfy (1).png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
+import { FaArrowLeft } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Header() {
   const [show, setShow ] = useState(false)
@@ -29,10 +31,10 @@ export default function Header() {
 
     <nav className={show ? "mobile-nav" : "desktop-nav"}>
     {show ?
-    <div className="w-100">
-      <button className="border-0 bg-transparent">
-      <RxCross1 onClick={showNav} className="fs-4 text-white"/> 
-      </button>
+    <div className="close w-100">
+     <div className="inner">
+      <FaArrowRight onClick={showNav} className="fs-4 text-white"/> 
+      </div>
       </div>
       : ""}
       <ul className="nav gap-4 ">
@@ -88,7 +90,8 @@ export default function Header() {
       Login
     </NavLink>
     </nav>
-<div className="hamburger" onClick={showNav}>{show ? "" : <GiHamburgerMenu/>}</div>
+    {show ? "" :
+<div className="hamburger" onClick={showNav}> <FaArrowLeft className="fs-4"/></div>}
   </div>
 </header>
 

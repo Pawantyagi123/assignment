@@ -6,6 +6,7 @@ import { FaLock } from "react-icons/fa";
 import image from "./Image/loginimg.png";
 import { Context } from "./Context/Context";
 import logo from "./Image/testfy (1).png";
+import {toast} from "react-toastify"
 
 export default function LoginPage() {
   const { openLogin, setOpenLogin, openSignup, setOpenSignup } =
@@ -36,8 +37,10 @@ export default function LoginPage() {
       console.log(res);
       setData("");
       setOpenLogin(false);
+      toast.success("Welcome user")
     } catch (error) {
       console.log(error);
+      toast.error(error)
     }
   };
 

@@ -2,7 +2,8 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { Container, Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import {toast} from "react-toastify"
 import { NavLink } from "react-router-dom";
 import {
   FaUserAlt,
@@ -117,9 +118,9 @@ export default function SignupPage() {
     e.preventDefault();
     try {
       console.log(formData);
-      
       alert("Form submitted successfully!");
-      setOpenSignup(false); // Reset the signup modal or page
+      setOpenSignup(false); 
+    toast.success("Register Succesfull")
     } catch (err) {
       const validationErrors = {};
       err.inner.forEach((error) => {
@@ -127,6 +128,7 @@ export default function SignupPage() {
       });
       console.log(validationErrors)
       setErrors(validationErrors);
+      toast.error("Some error is occured")
     }
   };
 
