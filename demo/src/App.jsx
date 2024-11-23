@@ -9,10 +9,11 @@ import TermsPolicy from "./components/Pages/TermsPolicy";
 import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
 import MainLayout from "./components/MainLayout";
-import LoginPage from "./components/LoginPage";
-import SignupPage from "./components/SignupPage";
+import LoginPage from "./components/Pages/LoginPage";
+import SignupPage from "./components/Pages/SignupPage";
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PasswReset from "./components/Pages/PasswReset";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/register" element={<SignupPage/>}/>
           </Route>
           <Route path="/termsandPolicy" element={<TermsPolicy />} />
+          <Route path="/resetpassword" element={<PasswReset/>}/>
         </Routes>
       <ToastContainer/>
         <Footer />

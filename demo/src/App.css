@@ -32,7 +32,7 @@ span{
   align-items: center;
   justify-content: start;
   gap: 20px;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.685);
@@ -43,6 +43,7 @@ span{
   z-index: 99;
 }
 
+
 .mobile-nav ul{
   display: flex;
   flex-direction: column;
@@ -50,9 +51,8 @@ span{
   align-items: center;
 }
 
-li{
-  font-size: 20px;
-  letter-spacing: 2px;
+.nav-item:hover{
+  color: white;
 }
 
 
@@ -406,7 +406,9 @@ li{
   backdrop-filter: blur(6px);
   width: 100%;
 }
-
+.btn-close{
+  color: white !important;
+}
 .modal-body{
   background: url("https://images.unsplash.com/photo-1703750960140-f41e1ccf5846?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-position: center;

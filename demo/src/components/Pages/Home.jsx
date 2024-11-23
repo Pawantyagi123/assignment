@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { Modal} from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'; 
-import SignupPage from '../SignupPage';
+import SignupPage from './SignupPage';
 import {Fade} from "react-awesome-reveal"
 import video from "../Image/video.mp4"
 import video1 from "../Image/home1.mp4"

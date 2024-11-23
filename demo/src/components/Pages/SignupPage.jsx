@@ -16,8 +16,8 @@ import {
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLink } from "react-icons/fa6";
-import { Context } from "./Context/Context";
-import signupSchema from "./schema/SignupSchema";
+import { Context } from "../Context/Context";
+import signupSchema from "../schema/SignupSchema";
 import SignupPoster from "./SignupPoster";
 import { isValidPhoneNumber } from "libphonenumber-js";
 
@@ -118,7 +118,6 @@ export default function SignupPage() {
     e.preventDefault();
     try {
       console.log(formData);
-      alert("Form submitted successfully!");
       setOpenSignup(false); 
     toast.success("Register Succesfull")
     } catch (err) {
@@ -143,47 +142,66 @@ export default function SignupPage() {
             <Col className="signup-page py-3 bg-dark shadow rounded text-white">
               <h1 className="text-center text-primary fw-bold mb-4">Sign Up</h1>
 
-              <form onSubmit={handleSubmit} className="bg-transparent p-4 d-flex gap-4 flex-column">
+              <form onSubmit={handleSubmit} className="signup-form p-4">
   {/* Page 1: Personal Details */}
   {page === 1 && (
     <>
       {/* Name Input */}
-      <div className="mb-4 position-relative">
-        <FaUserAlt className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-        <input
-          type="text"
-          className="form-control ps-5 pe-5 rounded-pill"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleInputChange}
-          onBlur={handleBlur}
-          placeholder="Enter your name"
-        />
-        {renderValidationIcon("name")}
-        {errors.name && <p className="text-danger small text-center">{errors.name}</p>}
+      <div className="mb-3">
+        <label htmlFor="name" className="form-label fs-5">
+          Name
+        </label>
+        <div className="input-group">
+          <span className="input-group-text">
+            <FaUserAlt />
+          </span>
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            name="name"
+            onBlur={handleBlur}
+            placeholder="Enter your name"
+            value={formData.name}
+            onChange={handleInputChange}
+            required
+          />
+           {renderValidationIcon("name")}
+        </div>
+        {errors.name && <p className="text-danger small">{errors.name}</p>}
       </div>
 
       {/* Email Input */}
-      <div className="mb-4 position-relative">
-        <MdEmail className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-        <input
-          type="email"
-          className="form-control ps-5 pe-5 rounded-pill"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          onBlur={handleBlur}
-          placeholder="Enter your email"
-        />
-        {renderValidationIcon("email")}
-        {errors.email && <p className="text-danger small text-center">{errors.email}</p>}
+      <div className="mb-3">
+        <label htmlFor="email" className="form-label fs-5">
+          Email
+        </label>
+        <div className="input-group">
+          <span className="input-group-text">
+            <MdEmail />
+          </span>
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            name="email"
+            onBlur={handleBlur}
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+          />
+            {renderValidationIcon("email")}
+        </div>
+        {errors.email && <p className="text-danger small">{errors.email}</p>}
       </div>
 
       {/* Phone Input */}
-      <div className="mb-4 position-relative">
-        <FaPhoneAlt className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
+      <div className="mb-3">
+        <label htmlFor="phone" className="form-label fs-5">
+          Phone
+        </label>
+        <div className="input-group">
         <PhoneInput
           country={"in"}
           value={formData.phone}
@@ -194,13 +212,14 @@ export default function SignupPage() {
             placeholder: "Enter your phone number",
           }}
         />
-        {renderValidationIcon("phone")}
-        {errors.phone && <p className="text-danger small text-center">{errors.phone}</p>}
+          {renderValidationIcon("phone")}
+        </div>
+        {errors.phone && <p className="text-danger small">{errors.phone}</p>}
       </div>
 
-      {/* Next Button */}
-      <div className="d-flex justify-content-center">
-        {validateForm && (
+      {/* Navigation Buttons */}
+      <div className="d-flex justify-content-end">
+      {validateField && (
           <button type="button" className="btn btn-primary rounded-sm-pill shadow-sm" onClick={nextPage}>
             Next
           </button>
@@ -213,63 +232,95 @@ export default function SignupPage() {
   {page === 2 && (
     <>
       {/* Company Name Input */}
-      <div className="mb-4 position-relative">
-        <FaBuilding className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-        <input
-          type="text"
-          className="form-control ps-5 rounded-pill"
-          id="companyName"
-          name="companyName"
-          value={formData.companyName}
-          onChange={handleInputChange}
-          required
-          placeholder="Enter your company name"
-        />
-        {renderValidationIcon("companyName")}
-        {errors.companyName && <p className="text-danger small text-center">{errors.companyName}</p>}
+      <div className="mb-3">
+        <label htmlFor="companyName" className="form-label fs-5">
+          Company Name
+        </label>
+        <div className="input-group">
+          <span className="input-group-text">
+            <FaBuilding />
+          </span>
+          <input
+            type="text"
+            className="form-control"
+            id="companyName"
+            onBlur={handleBlur}
+            name="companyName"
+            placeholder="Enter your company name"
+            value={formData.companyName}
+            onChange={handleInputChange}
+            required
+          />
+          {renderValidationIcon("companyName")}
+        </div>
+            {errors.companyName && <p className="text-danger small">{errors.companyName}</p>}
       </div>
 
       {/* Company URL Input */}
-      <div className="mb-4 position-relative">
-        <FaLink className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-        <input
-          type="url"
-          className="form-control ps-5 rounded-pill"
-          id="companyUrl"
-          name="companyUrl"
-          value={formData.companyUrl}
-          onChange={handleInputChange}
-          required
-          placeholder="Enter your company URL"
-        />
-        {renderValidationIcon("companyUrl")}
-        {errors.companyUrl && <p className="text-danger small text-center">{errors.companyUrl}</p>}
+      <div className="mb-3">
+        <label htmlFor="companyUrl" className="form-label fs-5">
+          Company URL
+        </label>
+        <div className="input-group">
+          <span className="input-group-text">
+            <FaLink />
+          </span>
+          <input
+            type="url"
+            className="form-control"
+            id="companyUrl"
+            onBlur={handleBlur}
+            name="companyUrl"
+            placeholder="Enter your company URL"
+            value={formData.companyUrl}
+            onChange={handleInputChange}
+            required
+          />
+          {renderValidationIcon("companyUrl")}
+        </div>
+            {errors.companyUrl && <p className="text-danger small">{errors.companyUrl}</p>}
       </div>
 
       {/* Services Select */}
-      <div className="mb-4 position-relative">
-        <FaServicestack className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-        <select
-          className="form-select ps-5 rounded-pill"
-          id="services"
-          name="services"
-          value={formData.services}
-          onChange={handleInputChange}
-          required
-        >
-          <option value="">Select a service</option>
-          <option value="Service1">Service 1</option>
-          <option value="Service2">Service 2</option>
-          <option value="Service3">Service 3</option>
-        </select>
+      <div className="mb-3">
+        <label htmlFor="services" className="form-label fs-5">
+          Services
+        </label>
+        <div className="input-group">
+          <span className="input-group-text">
+            <FaServicestack />
+          </span>
+          <select
+            className="form-select"
+            id="services"
+            name="services"
+            onBlur={handleBlur}
+            value={formData.services}
+            onChange={handleInputChange}
+            required
+          >
+            <option value="">Select a service</option>
+            <option value="Service1">Service 1</option>
+            <option value="Service2">Service 2</option>
+            <option value="Service3">Service 3</option>
+          </select>
+        </div>
       </div>
 
       {/* Navigation Buttons */}
       <div className="d-flex justify-content-between">
-        <button type="button" className="btn btn-secondary rounded-sm-pill" onClick={prevPage}>
+        <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={prevPage}
+        >
           Prev
         </button>
-        <button type="button" className="btn btn-primary rounded-sm-pill" onClick={nextPage}>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={nextPage}
+        >
           Next
         </button>
       </div>
@@ -280,37 +331,53 @@ export default function SignupPage() {
   {page === 3 && (
     <>
       {/* Password Input */}
-      <div className="mb-4 position-relative">
-        <FaLock className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-        <input
-          type="password"
-          className="form-control ps-5 rounded-pill"
-          id="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
-          required
-          placeholder="Enter your password"
-        />
-        {renderValidationIcon("password")}
-        {errors.password && <p className="text-danger small text-center">{errors.password}</p>}
+      <div className="mb-3">
+        <label htmlFor="password" className="form-label fs-5">
+          Password
+        </label>
+        <div className="input-group">
+          <span className="input-group-text">
+            <FaLock />
+          </span>
+          <input
+            type="password"
+            className="form-control"
+            id="password"
+            name="password"
+            onBlur={handleBlur}
+            placeholder="Enter your password"
+            value={formData.password}
+            onChange={handleInputChange}
+            required
+          />
+          {renderValidationIcon("password")}
+        </div>
+        {errors.password && <p className="text-danger small">{errors.password}</p>}
       </div>
 
       {/* Confirm Password Input */}
-      <div className="mb-4 position-relative">
-        <FaLock className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary" />
-        <input
-          type="password"
-          className="form-control ps-5 rounded-pill"
-          id="confirmPassword"
-          name="confirmPassword"
-          value={formData.confirmPassword}
-          onChange={handleInputChange}
-          required
-          placeholder="Confirm your password"
-        />
-        {renderValidationIcon("confirmPassword")}
-        {errors.confirmPassword && <p className="text-danger small text-center">{errors.confirmPassword}</p>}
+      <div className="mb-3">
+        <label htmlFor="confirmPassword" className="form-label fs-5">
+          Confirm Password
+        </label>
+        <div className="input-group">
+          <span className="input-group-text">
+            <FaLock />
+          </span>
+          <input
+            type="password"
+            className="form-control"
+            id="confirmPassword"
+            name="confirmPassword"
+            onBlur={handleBlur}
+            placeholder="Confirm your password"
+            value={formData.confirmPassword}
+            onChange={handleInputChange}
+            required
+          />
+          {renderValidationIcon("confirmPassword")}
+        </div>
+        {errors.confirmPassword && <p className="text-danger small">{errors.confirmPassword}</p>}
       </div>
 
       {/* Terms and Conditions */}
@@ -341,9 +408,11 @@ export default function SignupPage() {
           Submit
         </button>
       </div>
+     
     </>
   )}
 </form>
+
 
               <p className="text-center mt-4">
                 Have an account?{" "}
