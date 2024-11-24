@@ -35,23 +35,23 @@ span{
   position: fixed;
   top: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.685);
+  background-color: black;
   width: 50%;
   padding: 20px;
   height: 100vh;
-  backdrop-filter: blur(5px);
+ border-left: 1px solid white;
   z-index: 99;
+
+  & ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 
-.mobile-nav ul{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-item:hover{
+.header.nav-item:hover{
   color: white;
 }
 
@@ -59,7 +59,7 @@ span{
 .hamburger{
   display: none;
   color: white;
-  border: none;
+  border: 1px solid #8e2de2;
   border-right: none;
  position: absolute;
  right: 0;
@@ -68,19 +68,20 @@ span{
   text-align: center;
  border-top-left-radius: 30px;
  border-bottom-left-radius: 30px;
- background: linear-gradient(40deg, rgb(0, 217, 255),blue);
+ 
 }
 
-
 .inner{
+  border-left: none;
   position: absolute;
-  left: 0;
+  left: 0px;
    width: 40px;
    height: 30px;
    text-align: center;
+  border: 1px solid #8e2de2;
+  border-left: none;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
-  background: linear-gradient(40deg, rgb(0, 217, 255),blue);
 }
 
 @media (max-width: 950px){
@@ -146,7 +147,7 @@ span{
   }
 
   .home h2{
-    font-family: "Playfair Display", serif;
+    font-family: "Playfair Display";
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -171,7 +172,6 @@ span{
     border-radius: 30px;
     transition: background-color 0.7s, border-color 0.7s, color 0.7s ease-in-out;
     font-size: 25px;
-    font-weight: bold;
     text-decoration: none;
   }
 
@@ -356,17 +356,21 @@ span{
   opacity: 1;
   cursor: pointer;
 }
-.signup-page{
-  width: 100%;
-  margin-top: 10px;
-}
+
+/* sigunp page start */
+
 
 .signup-container{
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  gap: 10px;
   flex-wrap: wrap;
+  flex-direction: column;
 }
+
+.signup-page{
+  display: flex;
+ }
 
 .signup{
   background: transparent;
@@ -375,6 +379,7 @@ span{
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+  align-items: center;
 }
 
 
@@ -406,9 +411,7 @@ span{
   backdrop-filter: blur(6px);
   width: 100%;
 }
-.btn-close{
-  color: white !important;
-}
+
 .modal-body{
   background: url("https://images.unsplash.com/photo-1703750960140-f41e1ccf5846?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-position: center;
@@ -433,6 +436,7 @@ span{
  justify-content: space-around;
  align-items: center;
 }
+
 
   .custom-border {
     width: 80%; 
@@ -463,12 +467,16 @@ span{
     .signup-container{
       flex-direction: column;
     }
+    .signup-page{
+      flex-direction: column;
+    }
     .login-page{
       flex-direction: column;
     }
     .login-gif{
       display: none;
     }
+
   }
   @media (max-width: 590px) {
     .home h1 {

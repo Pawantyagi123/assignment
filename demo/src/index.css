@@ -4,7 +4,7 @@ body::-webkit-scrollbar{
  }
  
  body::-webkit-scrollbar-thumb{
-     background: linear-gradient(50deg,white,blue);
+     background: #8e2de2;
      border-radius: 20px;
      height: 10px;
  }

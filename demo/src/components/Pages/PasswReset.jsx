@@ -42,7 +42,7 @@ export default function PasswReset() {
               color:"white"
             }}
           >
-            Send Verification
+            Send Verification link
           </button>
         </form>
       </div>

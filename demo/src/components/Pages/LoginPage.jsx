@@ -7,6 +7,7 @@ import image from "../Image/loginimg.png";
 import { Context } from "../Context/Context";
 import logo from "../Image/testfy (1).png";
 import { toast } from "react-toastify";
+import { RxCross1 } from "react-icons/rx";
 
 export default function LoginPage() {
   const { openLogin, setOpenLogin, openSignup, setOpenSignup } =
@@ -53,8 +54,12 @@ export default function LoginPage() {
   return (
     <>
       {openLogin ? (
-        <div className="login-page">
+        <div className="d-flex justify-content-between flex-column">
           {/* Left side with blue background */}
+          <div className="d-flex justify-content-end">
+            <button onClick={()=> setOpenLogin(false)} className="border-0 bg-transparent"><RxCross1 className="text-white fs-3"/></button>
+          </div>
+          <div className="login-page">
           <div className="bg-transparent text-white d-flex justify-content-center align-items-center p-4 flex-column">
             <img
               src={logo}
@@ -140,6 +145,7 @@ export default function LoginPage() {
                 No account? Signup
               </NavLink>
             </div>
+          </div>
           </div>
         </div>
       ) : (

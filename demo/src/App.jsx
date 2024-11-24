@@ -14,6 +14,7 @@ import SignupPage from "./components/Pages/SignupPage";
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PasswReset from "./components/Pages/PasswReset";
+import NewPassword from "./components/Pages/NewPassword";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           </Route>
           <Route path="/termsandPolicy" element={<TermsPolicy />} />
           <Route path="/resetpassword" element={<PasswReset/>}/>
+          <Route path="/createpassword" element={<NewPassword/>}/>
         </Routes>
       <ToastContainer/>
         <Footer />

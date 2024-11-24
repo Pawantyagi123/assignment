@@ -20,6 +20,7 @@ import { Context } from "../Context/Context";
 import signupSchema from "../schema/SignupSchema";
 import SignupPoster from "./SignupPoster";
 import { isValidPhoneNumber } from "libphonenumber-js";
+import { RxCross1 } from "react-icons/rx";
 
 export default function SignupPage() {
   const { openSignup, setOpenSignup, openLogin, setOpenLogin } =
@@ -135,19 +136,23 @@ export default function SignupPage() {
     <>
       {openSignup ? (
         <div  className="signup-container">
-            <Col md={6} className="signup p-4 text-white">
+          <div className="d-flex justify-content-end">
+            <button onClick={()=> setOpenSignup(false)} className="border-0 bg-transparent"><RxCross1 className="fs-3 text-white"/></button>
+          </div>
+          <div className="signup-page">
+            <div md={6} className="signup p-4 text-white">
               <SignupPoster />
-            </Col>
+            </div>
 
-            <Col className="signup-page py-3 bg-dark shadow rounded text-white">
-              <h1 className="text-center text-primary fw-bold mb-4">Sign Up</h1>
+            <Col className="py-3 bg-dark shadow rounded text-white">
+              <h1 className="text-center text-primary fw-bold mb-4 fs-3">Sign Up</h1>
 
               <form onSubmit={handleSubmit} className="signup-form p-4">
   {/* Page 1: Personal Details */}
   {page === 1 && (
     <>
       {/* Name Input */}
-      <div className="mb-3">
+      <div className="mb-2">
         <label htmlFor="name" className="form-label fs-5">
           Name
         </label>
@@ -172,7 +177,7 @@ export default function SignupPage() {
       </div>
 
       {/* Email Input */}
-      <div className="mb-3">
+      <div className="mb-2">
         <label htmlFor="email" className="form-label fs-5">
           Email
         </label>
@@ -197,7 +202,7 @@ export default function SignupPage() {
       </div>
 
       {/* Phone Input */}
-      <div className="mb-3">
+      <div className="mb-2">
         <label htmlFor="phone" className="form-label fs-5">
           Phone
         </label>
@@ -232,7 +237,7 @@ export default function SignupPage() {
   {page === 2 && (
     <>
       {/* Company Name Input */}
-      <div className="mb-3">
+      <div className="mb-2">
         <label htmlFor="companyName" className="form-label fs-5">
           Company Name
         </label>
@@ -257,7 +262,7 @@ export default function SignupPage() {
       </div>
 
       {/* Company URL Input */}
-      <div className="mb-3">
+      <div className="mb-2">
         <label htmlFor="companyUrl" className="form-label fs-5">
           Company URL
         </label>
@@ -282,7 +287,7 @@ export default function SignupPage() {
       </div>
 
       {/* Services Select */}
-      <div className="mb-3">
+      <div className="mb-2">
         <label htmlFor="services" className="form-label fs-5">
           Services
         </label>
@@ -305,6 +310,7 @@ export default function SignupPage() {
             <option value="Service3">Service 3</option>
           </select>
         </div>
+
       </div>
 
       {/* Navigation Buttons */}
@@ -331,7 +337,7 @@ export default function SignupPage() {
   {page === 3 && (
     <>
       {/* Password Input */}
-      <div className="mb-3">
+      <div className="mb-2">
         <label htmlFor="password" className="form-label fs-5">
           Password
         </label>
@@ -356,7 +362,7 @@ export default function SignupPage() {
       </div>
 
       {/* Confirm Password Input */}
-      <div className="mb-3">
+      <div className="mb-2">
         <label htmlFor="confirmPassword" className="form-label fs-5">
           Confirm Password
         </label>
@@ -425,7 +431,7 @@ export default function SignupPage() {
                 </NavLink>
               </p>
             </Col>
-         
+         </div>
         </div>
       ) : null}
     </>

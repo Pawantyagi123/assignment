@@ -61,7 +61,6 @@ function HomePage() {
       {/* Modal for Signup Page */}
       <Modal show={openSignup} onHide={handlePopup} centered dialogClassName="modal-lg" className='signup-modal'>
         <Modal.Body className='modal-body'>
-        <Modal.Header closeButton className="bg-secondary rounded border-0 text-white-50"></Modal.Header>
           <SignupPage/>
         </Modal.Body>
       </Modal>

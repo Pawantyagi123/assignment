@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Context } from "../Context/Context";
 import logo from "../Image/testfy (1).png";
 import { FaArrowLeft } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa6";
 
 export default function Header() {
   const [show, setShow] = useState(false);
@@ -16,8 +16,11 @@ export default function Header() {
     setShow(!show);
   };
 
+
+
   const openPage = () => {
     setOpenLogin(!openLogin);
+    setShow(false)
   };
 
   // Effect to toggle page scroll when mobile menu is open
@@ -150,10 +153,6 @@ export default function Header() {
         className="login-modal"
       >
         <Modal.Body className="modal-body">
-          <Modal.Header
-            closeButton
-            className="bg-secondary rounded border-0 text-white-50"
-          ></Modal.Header>
           <LoginPage />
         </Modal.Body>
       </Modal>
