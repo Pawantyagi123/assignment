@@ -63,6 +63,7 @@ export default function Contact() {
         required
         onChange={handleInput}
         value={contactDetail.name}
+        autoComplete="true"
       />
       </div>
       <div className='d-flex gap-2 '>
@@ -76,6 +77,7 @@ export default function Contact() {
         required
         onChange={handleInput}
         value={contactDetail.email}
+        autoComplete="true"
       />
       </div>
       <div className='d-flex gap-2'>
@@ -89,6 +91,7 @@ export default function Contact() {
         required
         value={contactDetail.phone}
         onChange={handleInput}
+         autoComplete="true"
       />
       </div>
       <div className='d-flex gap-2'>

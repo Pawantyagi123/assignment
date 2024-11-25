@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 import "./App.css";
 import "./Contact.css"
 import About from "./components/Pages/About";
@@ -15,13 +16,15 @@ import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PasswReset from "./components/Pages/PasswReset";
 import NewPassword from "./components/Pages/NewPassword";
-
+import { Context } from "./components/Context/Context";
 
 function App() {
+  const { show } = useContext(Context);
   return (
     <>
-      <Router>
+      <Router future={{ v7_startTransition: true }}>
         <Header />
+        <div className={`main-layout ${show ? "blurred" : ""}`}>
         <Routes>
           <Route path="/" element={<MainLayout/>}>
           <Route index element={<Home />} />
@@ -35,6 +38,7 @@ function App() {
           <Route path="/resetpassword" element={<PasswReset/>}/>
           <Route path="/createpassword" element={<NewPassword/>}/>
         </Routes>
+        </div>
       <ToastContainer/>
         <Footer />
       </Router>

@@ -5,15 +5,7 @@ import "react-phone-input-2/lib/style.css";
 import { Col } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { NavLink } from "react-router-dom";
-import {
-  FaUserAlt,
-  FaPhoneAlt,
-  FaBuilding,
-  FaLock,
-  FaServicestack,
-  FaCheckCircle,
-  FaTimesCircle,
-} from "react-icons/fa";
+import {FaUserAlt,FaBuilding,FaLock,FaServicestack,FaCheckCircle,FaTimesCircle,} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLink } from "react-icons/fa6";
 import { Context } from "../Context/Context";
@@ -192,6 +184,7 @@ export default function SignupPage() {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
+                          autoComplete={true}
                         />
                         {renderValidationIcon("name")}
                       </div>
@@ -219,6 +212,7 @@ export default function SignupPage() {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
+                          autoComplete={true}
                         />
                         {renderValidationIcon("email")}
                       </div>
@@ -293,6 +287,7 @@ export default function SignupPage() {
                           value={formData.companyName}
                           onChange={handleInputChange}
                           required
+                          autoComplete={true}
                         />
                         {renderValidationIcon("companyName")}
                       </div>
@@ -322,6 +317,7 @@ export default function SignupPage() {
                           value={formData.companyUrl}
                           onChange={handleInputChange}
                           required
+                          autoComplete={true}
                         />
                         {renderValidationIcon("companyUrl")}
                       </div>
@@ -356,6 +352,7 @@ export default function SignupPage() {
                         <Select
                           options={options}
                           isMulti
+                          isSearchable
                           className="form-select"
                           id="services"
                           name="services"
@@ -410,6 +407,7 @@ export default function SignupPage() {
                           value={formData.password}
                           onChange={handleInputChange}
                           required
+                          autoComplete="false"
                         />
                         {renderValidationIcon("password")}
                       </div>
@@ -440,6 +438,7 @@ export default function SignupPage() {
                           value={formData.confirmPassword}
                           onChange={handleInputChange}
                           required
+                          autoComplete="false"
                         />
                         {renderValidationIcon("confirmPassword")}
                       </div>

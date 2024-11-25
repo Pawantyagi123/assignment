@@ -100,6 +100,7 @@ export default function LoginPage() {
                     value={data.emailId}
                     onChange={handleInput}
                     required
+                    autoComplete="true"
                   />
                 </div>
               </div>
@@ -122,6 +123,7 @@ export default function LoginPage() {
                     value={data.password}
                     onChange={handleInput}
                     required
+                    autoComplete="false"
                   />
                 </div>
               </div>

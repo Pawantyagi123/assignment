@@ -9,7 +9,7 @@ export const ContextProvider = ({ children }) => {
 
   return (
     <Context.Provider
-      value={{ openLogin, setOpenLogin, openSignup, setOpenSignup,show,setShow }}
+      value={{ openLogin, setOpenLogin, openSignup, setOpenSignup, show, setShow }}
     >
       {children}
     </Context.Provider>
