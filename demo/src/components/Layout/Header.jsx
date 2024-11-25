@@ -5,18 +5,15 @@ import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Context } from "../Context/Context";
 import logo from "../Image/testfy (1).png";
-import { FaArrowLeft } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa6";
+import { RxCross1 } from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 export default function Header() {
-  const [show, setShow] = useState(false);
-  const { openLogin, setOpenLogin } = useContext(Context);
+  const { openLogin, setOpenLogin,show, setShow } = useContext(Context);
 
   const showNav = () => {
     setShow(!show);
   };
-
-
 
   const openPage = () => {
     setOpenLogin(!openLogin);
@@ -25,13 +22,12 @@ export default function Header() {
 
   // Effect to toggle page scroll when mobile menu is open
   useEffect(() => {
-    if (show) {
+    if (show || openLogin) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
 
-    // Clean up to reset overflow
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -39,7 +35,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="header px-2 py-2 shadow-sm w-100">
+      <header className="header px-2 py-2 shadow-md">
         <div className="container-fluid d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center gap-2">
             <img
@@ -52,15 +48,6 @@ export default function Header() {
           </div>
 
           <nav className={show ? "mobile-nav" : "desktop-nav"}>
-            {show ? (
-              <div className="close w-100">
-                <div className="inner">
-                  <FaArrowRight onClick={showNav} className="fs-4 text-white" />
-                </div>
-              </div>
-            ) : (
-              ""
-            )}
             <ul className="nav gap-4 ">
               <li className="nav-item">
                 <NavLink
@@ -134,14 +121,13 @@ export default function Header() {
               Login
             </NavLink>
           </nav>
-          {show ? (
-            ""
-          ) : (
-            <div className="hamburger" onClick={showNav}>
-              {" "}
-              <FaArrowLeft className="fs-4" />
+         
+          
+            <div className="hamburger fs-3" onClick={showNav}>
+            
+              {show ? <RxCross1/> : <RxHamburgerMenu/>}
             </div>
-          )}
+         
         </div>
       </header>
 

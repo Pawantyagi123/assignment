@@ -10,7 +10,7 @@ import { Context } from '../Context/Context';
 
 
 function HomePage() {
- const {openSignup, setOpenSignup} = useContext(Context)
+ const {openSignup, setOpenSignup,show,setShow} = useContext(Context)
 
   const handlePopup = () => {
     setOpenSignup(!openSignup);
@@ -29,26 +29,24 @@ function HomePage() {
       
 
       {/* Main Content */}
+      <Fade direction="left" cascade duration={4000}>
       <div className="text-white d-flex flex-column justify-content-between align-items-center text-center">
         <div className=" d-flex flex-column justify-content-between gap-4 align-items-center">
-          <Fade direction="left" cascade duration={4000}>
             <h1>Testify</h1>
             <h2>Test <span>Smarter</span>, Not <span>Harder</span></h2>
-          </Fade>
-          <Fade direction="left" cascade duration={4000} delay={4000}>
+          
             <p className='para'>
              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, mollitia!
             </p>
-          </Fade>
+          
         </div>
-        <Fade direction="up" cascade duration={5000} delay={4000}>
         <div className="container py-3 d-flex align-items-center justify-content-center">
           <NavLink to="register" onClick={handlePopup} className="button">
             Join us
           </NavLink>
         </div>
-        </Fade>
       </div>
+      </Fade>
 
       {/* Optional Image */}
       <div className="image">

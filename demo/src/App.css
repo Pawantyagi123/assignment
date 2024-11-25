@@ -13,7 +13,7 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  border-bottom: 1px solid rgb(81, 150, 215);
+  box-shadow: 0px 0px 30px white;
 }
 
 span{
@@ -23,24 +23,26 @@ span{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
+  
 }
 
 .mobile-nav{
   display: none;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: start;
   gap: 20px;
   position: fixed;
-  top: 0;
+  top: 86px;
   right: 0;
   background-color: black;
-  width: 50%;
   padding: 20px;
-  height: 100vh;
- border-left: 1px solid white;
+  height: auto;
+width: 295px;
   z-index: 99;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 
   & ul{
     display: flex;
@@ -59,32 +61,15 @@ span{
 .hamburger{
   display: none;
   color: white;
-  border: 1px solid #8e2de2;
-  border-right: none;
  position: absolute;
  right: 0;
   width: 40px;
   height: 30px;
-  text-align: center;
- border-top-left-radius: 30px;
- border-bottom-left-radius: 30px;
- 
 }
 
-.inner{
-  border-left: none;
-  position: absolute;
-  left: 0px;
-   width: 40px;
-   height: 30px;
-   text-align: center;
-  border: 1px solid #8e2de2;
-  border-left: none;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
 
-@media (max-width: 950px){
+
+@media (max-width: 850px){
   .desktop-nav{
     display: none;
   }
@@ -95,6 +80,8 @@ span{
   display: flex;
  }
 }
+
+
 
  /* Button styles */
 .gradient-button {
@@ -122,10 +109,10 @@ span{
   .home {
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 20px;
+    padding: 20px 30px;
     height: 80vh;
   }
  
@@ -287,15 +274,12 @@ span{
   text-align: center;
 }
 
-
 .gif-image{
   animation: spin 10s linear infinite;
 }
 
 .about-gif{
   border: none;
-  border-radius: 50%;
-  box-shadow: inset 0px 0px 40px skyblue;
   height: auto;
 }
 .about-gif>img{
@@ -413,7 +397,7 @@ span{
 }
 
 .modal-body{
-  background: url("https://images.unsplash.com/photo-1703750960140-f41e1ccf5846?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background: url("../src/components/Image/model-image.avif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -427,9 +411,10 @@ span{
   background: rgb(12, 12, 12);
   backdrop-filter: blur(5px);
   width: 100%;
+ gap: 20px;
   display: flex;
   flex-direction: column;
- gap: 25px;
+
 }
 .login-page{
   display: flex;
@@ -454,6 +439,7 @@ span{
     .home{
       height: auto;
       flex-wrap: wrap;
+      justify-content: space-around;
     }
     .para {
       font-size: 0.9rem;
@@ -466,6 +452,7 @@ span{
     }
     .signup-container{
       flex-direction: column;
+      padding-bottom: 20px;
     }
     .signup-page{
       flex-direction: column;
@@ -515,10 +502,9 @@ span{
 
     .modal-body{
       padding: 0px !important;
-      height: auto;
+      height: 100vh;
       border: none;
-    }
-   
+    }   
   }
   @media(max-width:768px){
     .about-text{

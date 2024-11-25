@@ -5,7 +5,6 @@ const signupSchema = yup.object().shape({
   email: yup.string().email("Invalid email format").required("Email is required"),
   phone: yup
     .string()
-    .matches(/^\d{10}$/, "Phone number must be 10 digits")
     .required("Phone number is required"),
   companyName: yup.string().required("Company name is required"),
   companyUrl: yup.string().url("Invalid URL").required("Company URL is required"),
