@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="header px-2 py-2 shadow-md">
+      <header className="header px-4 py-2 shadow-md">
   <div className="container-fluid d-flex align-items-center justify-content-between">
     <div className="d-flex align-items-center gap-2">
       <img
@@ -58,8 +58,8 @@ export default function Header() {
             className={({ isActive }) =>
               `nav-link ${
                 isActive
-                  ? "text-white fw-bold border-bottom border-danger"
-                  : "text-primary"
+                  ? "text-white fw-bold"
+                  : ""
               }`
             }
           >
@@ -73,8 +73,8 @@ export default function Header() {
             className={({ isActive }) =>
               `nav-link ${
                 isActive
-                  ? "text-white fw-bold border-bottom border-danger"
-                  : "text-primary"
+                  ? "text-white fw-bold"
+                  : ""
               }`
             }
           >
@@ -88,17 +88,17 @@ export default function Header() {
             className={({ isActive }) =>
               `nav-link ${
                 isActive
-                  ? "text-white fw-bold border-bottom border-danger"
-                  : "text-primary"
+                  ? "text-white fw-bold "
+                  : ""
               }`
             }
           >
             Features
           </NavLink>
         </li>
-       <li>
+       <li className="nav-item pt-1">
        <Dropdown>
-  <Dropdown.Toggle id="dropdown-basic" className="bg-transparent text-primary border-0">
+  <Dropdown.Toggle id="dropdown-basic" className="bg-transparent text-white border-0 fs-5 p-0">
     Services
   </Dropdown.Toggle>
 
@@ -122,8 +122,8 @@ export default function Header() {
             className={({ isActive }) =>
               `nav-link ${
                 isActive
-                  ? "text-white fw-bold border-bottom border-danger"
-                  : "text-primary"
+                  ? "text-white fw-bold"
+                  : ""
               }`
             }
           >

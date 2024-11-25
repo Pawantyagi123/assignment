@@ -1,11 +1,12 @@
 import * as yup from "yup";
 
 const signupSchema = yup.object().shape({
-  name: yup.string().required("Name is required"),
-  email: yup.string().email("Invalid email format").required("Email is required"),
-  phone: yup
+  name: yup
     .string()
-    .required("Phone number is required"),
+    .matches(/^[A-Za-z\s]+$/, "Name should only contain alphabets")
+    .required("Name is required"),
+  email: yup.string().email("Invalid email format").required("Email is required"),
+  phone: yup.string().required("Phone number is required"),
   companyName: yup.string().required("Company name is required"),
   companyUrl: yup.string().url("Invalid URL").required("Company URL is required"),
   services: yup.string().required("Please select a service"),
@@ -21,3 +22,4 @@ const signupSchema = yup.object().shape({
 });
 
 export default signupSchema;
+

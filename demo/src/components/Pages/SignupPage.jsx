@@ -157,7 +157,7 @@ export default function SignupPage() {
             </div>
 
             <Col className="py-3 bg-dark shadow rounded text-white ">
-              <h1 className="text-center text-primary fw-bold mb-4 fs-3">
+              <h1 className="text-center text-primary fw-bold fs-3">
                 Sign Up
               </h1>
 
@@ -184,7 +184,7 @@ export default function SignupPage() {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          autoComplete={true}
+                          autoComplete="true"
                         />
                         {renderValidationIcon("name")}
                       </div>
@@ -211,8 +211,7 @@ export default function SignupPage() {
                           placeholder="Enter your email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          required
-                          autoComplete={true}
+                          autoComplete="true"
                         />
                         {renderValidationIcon("email")}
                       </div>
@@ -229,6 +228,9 @@ export default function SignupPage() {
                       <div className="input-group">
                         <PhoneInput
                           country={"in"}
+                          id="phone"
+                          name="phone"
+                          placeholder= "Enter your phone number"
                           value={formData.phone}
                           onChange={handlePhoneChange}
                           onBlur={() =>
@@ -240,7 +242,6 @@ export default function SignupPage() {
                           }
                           inputProps={{
                             className: "form-control ps-5 pe-5 rounded-pill",
-                            placeholder: "Enter your phone number",
                           }}
                         />
                         {renderValidationIcon("phone")}
@@ -251,12 +252,13 @@ export default function SignupPage() {
                     </div>
 
                     {/* Navigation Buttons */}
-                    <div className="d-flex justify-content-center">
-                      {validateField && (
+                    <div className="d-flex justify-content-center pt-2">
+                      {validateForm && (
                         <button
                           type="button"
                           className="btn btn-primary rounded-sm-pill shadow-sm"
                           onClick={nextPage}
+                          
                         >
                           Next
                         </button>
@@ -287,7 +289,7 @@ export default function SignupPage() {
                           value={formData.companyName}
                           onChange={handleInputChange}
                           required
-                          autoComplete={true}
+                          autoComplete="true"
                         />
                         {renderValidationIcon("companyName")}
                       </div>
@@ -317,7 +319,7 @@ export default function SignupPage() {
                           value={formData.companyUrl}
                           onChange={handleInputChange}
                           required
-                          autoComplete={true}
+                          autoComplete="true"
                         />
                         {renderValidationIcon("companyUrl")}
                       </div>

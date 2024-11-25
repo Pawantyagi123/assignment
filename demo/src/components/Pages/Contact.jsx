@@ -10,7 +10,7 @@ export default function Contact() {
   const [contactDetail, setContactDetail] = useState({
     name: "",
     email: "",
-    phone: "",
+    contactPhone: "",
     message: "",
   })
   const handleInput = (e) => {
@@ -27,7 +27,7 @@ export default function Contact() {
     setContactDetail({
       name: "",
       email: "",
-      phone: "",
+      contactPhone: "",
       message: ""
     })
     toast.success("message sent successfully")
@@ -81,15 +81,15 @@ export default function Contact() {
       />
       </div>
       <div className='d-flex gap-2'>
-        <label htmlFor="phone"><FaPhoneAlt/></label>
+        <label htmlFor="contactPhone"><FaPhoneAlt/></label>
       <input
         type="tel"
-        id='phone'
-        name='phone'
+        id='contactPhone'
+        name='contactPhone'
         placeholder="Your Phone Number"
         className="form-control rounded-pill p-2 shadow-sm mb-3"
         required
-        value={contactDetail.phone}
+        value={contactDetail.contactPhone}
         onChange={handleInput}
          autoComplete="true"
       />
