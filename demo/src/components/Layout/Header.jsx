@@ -37,9 +37,9 @@ export default function Header() {
 
   return (
     <>
-      <header className="header px-4 py-2 shadow-md">
-  <div className="container-fluid d-flex align-items-center justify-content-between">
-    <div className="d-flex align-items-center gap-2">
+      <header className="header px-3 py-2 shadow-md">
+  <div className="d-flex align-items-center justify-content-between">
+    <div className="d-flex align-items-center gap-2 justify-content-center">
       <img
         src={logo}
         alt="logo"
@@ -96,9 +96,9 @@ export default function Header() {
             Features
           </NavLink>
         </li>
-       <li className="nav-item pt-1">
+       <li className="nav-item">
        <Dropdown>
-  <Dropdown.Toggle id="dropdown-basic" className="bg-transparent text-white border-0 fs-5 p-0">
+  <Dropdown.Toggle id="dropdown-basic" className="bg-transparent text-white border-0 fs-5">
     Services
   </Dropdown.Toggle>
 

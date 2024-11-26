@@ -6,7 +6,7 @@ export default function NewPassword() {
     <div className="create-pass d-flex justify-content-center align-items-center">
       <div className="pass-form p-4" style={{ width: "100%", maxWidth: "400px" }}>
         <h2 className="text-center mb-3">Reset Password</h2>
-        <p className="text-center text-primary mb-4">
+        <p className="text-center mb-4">
           Please enter and confirm your new password.
         </p>
 
@@ -48,7 +48,7 @@ export default function NewPassword() {
           </div>
 
           <div className="d-grid">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn">
               Reset Password
             </button>
           </div>
