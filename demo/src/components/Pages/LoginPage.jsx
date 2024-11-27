@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import image from "../Image/loginimg.png";
 import { Context } from "../Context/Context";
-import logo from "../Image/testfy (1).png";
+import logo from "../Image/logo.png";
 import { toast } from "react-toastify";
 import { RxCross1 } from "react-icons/rx";
 

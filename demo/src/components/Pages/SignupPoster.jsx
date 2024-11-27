@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../Image/testfy (1).png"
+import logo from "../Image/logo.png"
 import gif from "../Image/robo.gif"
 
 export default function SignupPoster() {

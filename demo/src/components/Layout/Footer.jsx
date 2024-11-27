@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import logo from "../Image/logo.png"
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
@@ -9,7 +10,10 @@ export default function Footer() {
         <div className="row">
           {/* Company Details */}
           <div className="col-md-4 mb-3">
+            <div className="d-flex  align-items-center gap-1">
+            <img src={logo} alt="" style={{ width: "70px", height: "70px",borderRadius: "50%" }}/>
             <h5 className="text-uppercase">Testfy</h5>
+            </div>
             <p>
               Testfy is dedicated to providing top-notch AI-driven testing solutions for businesses worldwide.
             </p>

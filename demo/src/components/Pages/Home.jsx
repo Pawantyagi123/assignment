@@ -30,26 +30,24 @@ function HomePage() {
 
       {/* Main Content */}
       <Fade direction="left" cascade duration={4000}>
-      <div className="text-white d-flex flex-column justify-content-between align-items-center text-center">
-        <div className=" d-flex flex-column justify-content-between gap-4 align-items-center">
+     
+        <div className="d-flex flex-column justify-content-start gap-4 align-items-center text-center text-white">
             <h1>Testify</h1>
             <h2>Test <span>Smarter</span>, Not <span>Harder</span></h2>
           
             <p className='para'>
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, mollitia!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, id. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, cumque.
             </p>
-          
-        </div>
-        <div className="container py-3 d-flex align-items-center justify-content-center">
+            
           <NavLink to="register" onClick={handlePopup} className="button">
             Join us
           </NavLink>
-        </div>
-      </div>
+          </div>
+    
       </Fade>
 
       {/* Optional Image */}
-      <div className="image">
+      <div className="image w-100">
        <video autoPlay loop muted>
         <source src={video1} type='video/mp4'/>
        </video>

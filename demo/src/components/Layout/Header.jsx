@@ -4,10 +4,10 @@ import { useContext, useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Context } from "../Context/Context";
-import logo from "../Image/testfy (1).png";
+import logo from "../Image/logo.png";
 import { RxCross1 } from "react-icons/rx";
 import { RxHamburgerMenu } from "react-icons/rx";
-import Dropdown from 'react-bootstrap/Dropdown';
+import { FaChevronDown } from "react-icons/fa";;
 
 export default function Header() {
   const { openLogin, setOpenLogin,show, setShow } = useContext(Context);
@@ -50,7 +50,7 @@ export default function Header() {
     </div>
 
     <nav className={show ? "mobile-nav" : "desktop-nav"}>
-      <ul className="nav gap-4">
+      <ul className="nav">
         <li className="nav-item">
           <NavLink
             to="/"
@@ -58,7 +58,7 @@ export default function Header() {
             className={({ isActive }) =>
               `nav-link ${
                 isActive
-                  ? "text-white fw-bold"
+                  ? "text-primary"
                   : ""
               }`
             }
@@ -73,7 +73,7 @@ export default function Header() {
             className={({ isActive }) =>
               `nav-link ${
                 isActive
-                  ? "text-white fw-bold"
+                  ? "text-primary"
                   : ""
               }`
             }
@@ -88,7 +88,7 @@ export default function Header() {
             className={({ isActive }) =>
               `nav-link ${
                 isActive
-                  ? "text-white fw-bold "
+                  ? "text-primary"
                   : ""
               }`
             }
@@ -97,23 +97,17 @@ export default function Header() {
           </NavLink>
         </li>
        <li className="nav-item">
-       <Dropdown>
-  <Dropdown.Toggle id="dropdown-basic" className="bg-transparent text-white border-0 fs-5">
-    Services
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <NavLink to="/action-1" className="dropdown-item">
-      service1
-    </NavLink>
-    <NavLink to="/action-2" className="dropdown-item">
-      service2
-    </NavLink>
-    <NavLink to="/action-3" className="dropdown-item">
-      service3
-    </NavLink>
-  </Dropdown.Menu>
-</Dropdown>
+      <NavLink to={"#"} 
+            aria-current="page"
+            className="nav-link">
+        Services <span id="arrow"><FaChevronDown className="text-white"/></span>
+      </NavLink>
+      <ul id="dropdown">
+        <li>service1</li>
+        <li>service2</li>
+        <li>service3</li>
+        <li>service4</li>
+      </ul>
        </li>
         <li className="nav-item">
           <NavLink
@@ -122,7 +116,7 @@ export default function Header() {
             className={({ isActive }) =>
               `nav-link ${
                 isActive
-                  ? "text-white fw-bold"
+                  ? "text-primary"
                   : ""
               }`
             }

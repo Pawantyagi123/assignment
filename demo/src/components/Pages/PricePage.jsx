@@ -16,6 +16,7 @@ export default function PricePage() {
           <li>Basic access to features</li>
           <li>Limited support</li>
           <li>Access to community forums</li>
+          <li>1 month free</li>
         </ul>
         <button className="price-card-button">Choose Plan</button>
       </div>
