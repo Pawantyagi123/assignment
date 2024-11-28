@@ -1,7 +1,9 @@
-import React from 'react'
 import "../css/about.css"
+
+import React from 'react'
 import gif from "../Image//gif2.gif"
 import image from "../Image/about-image.avif"
+
 export default function About() {
   return (
     <div className="about-page d-flex justify-content-around align-items-center text-center">
@@ -14,7 +16,7 @@ export default function About() {
       <div className='w-75'>
         <img src={image} alt="image" width={"100%"}/>
         </div>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab distinctio quidem nesciunt, eligendi autem eveniet natus quis harum unde praesentium, odit ex accusamus vel. Cupiditate, nisi facere minima aspernatur dolorum unde perspiciatis incidunt culpa quasi, laborum enim ipsam omnis delectus?</p>
+      <p>Lorem ipsum dolor sit, amat consectetur adipisicing edit. Ab distinction quem nescient, legend ahem event nats ques harm nude presenting, doit ex accusals vel. Capitate, nisi facer minima aspirator dolour nude perspiciatis incident culpa quasi, labrum enid ipam omni defects?</p>
     </div>
 
       <div className='about-gif'>

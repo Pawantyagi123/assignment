@@ -1,6 +1,7 @@
-import React from "react";
-import Marquee from 'react-fast-marquee';
 import "../css/feature.css"
+
+import Marquee from 'react-fast-marquee';
+import React from "react";
 
 export default function Features() {
   const features = [

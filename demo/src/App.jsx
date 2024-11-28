@@ -1,20 +1,20 @@
 import React, { useContext } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
 import About from "./components/pages/About.jsx";
 import Contact from "./components/pages/Contact.jsx";
-import Features from "./components/pages/Features.jsx";
-import Home from "./components/pages/Home.jsx";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import TermsPolicy from "./components/pages/TermsPolicy.jsx";
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
-import MainLayout from "./components/MainLayout";
-import LoginPage from "./components/pages/LoginPage.jsx";
-import SignupPage from "./components/pages/SignupPage.jsx";
-import PasswReset from "./components/pages/PasswReset.jsx";
-import NewPassword from "./components/pages/NewPassword.jsx";
 import { Context } from "./components/Context/Context.jsx";
 import CustomeCursor from "./CustomeCursor.jsx";
-
+import Features from "./components/pages/Features.jsx";
+import Footer from "./components/layout/Footer";
+import Header from "./components/layout/Header";
+import Home from "./components/pages/Home.jsx";
+import LoginPage from "./components/pages/LoginPage.jsx";
+import MainLayout from "./components/MainLayout";
+import NewPassword from "./components/pages/NewPassword.jsx";
+import PassReset from "./components/pages/PassReset.jsx";
+import SignupPage from "./components/pages/SignupPage.jsx";
+import TermsPolicy from "./components/pages/TermsPolicy.jsx";
 
 function App() {
   const { show } = useContext(Context);
@@ -33,8 +33,8 @@ function App() {
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/register" element={<SignupPage/>}/>
           </Route>
-          <Route path="/termsandPolicy" element={<TermsPolicy />} />
-          <Route path="/resetpassword" element={<PasswReset/>}/>
+          <Route path="/termsPolicy" element={<TermsPolicy />} />
+          <Route path="/resetpassword" element={<PassReset/>}/>
           <Route path="/createpassword" element={<NewPassword/>}/>
         </Routes>
         </div>

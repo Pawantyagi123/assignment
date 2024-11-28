@@ -1,10 +1,11 @@
-import axios from 'axios';
 import React, { useState } from 'react'
+
 import { CiLock } from "react-icons/ci";
 import { MdEmail } from 'react-icons/md';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-export default function PasswReset() {
+export default function PassReset() {
   const [resetEmail, setResetEmail] = useState("");
   const navigate = useNavigate()
 

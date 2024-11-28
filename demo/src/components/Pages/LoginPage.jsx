@@ -1,13 +1,14 @@
-import axios from "axios";
 import React, { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { MdEmail } from "react-icons/md";
-import { FaLock } from "react-icons/fa";
-import image from "../Image/loginimg.png";
+
 import { Context } from "../Context/Context";
+import { FaLock } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { NavLink } from "react-router-dom";
+import { RxCross1 } from "react-icons/rx";
+import axios from "axios";
+import image from "../Image/login.png";
 import logo from "../Image/logo.png";
 import { toast } from "react-toastify";
-import { RxCross1 } from "react-icons/rx";
 
 export default function LoginPage() {
   const { openLogin, setOpenLogin, openSignup, setOpenSignup } =
@@ -33,7 +34,7 @@ export default function LoginPage() {
     }));
   };
 
-  // sendig form data
+  // sending form data
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

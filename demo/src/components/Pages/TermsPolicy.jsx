@@ -12,7 +12,7 @@ export default function TermsPolicy() {
 
   {/* Welcome Section */}
   <section className="mb-5">
-    <h2 className="border-bottom pb-2 mb-4">Welcome to Testfy!</h2>
+    <h2 className="border-bottom pb-2 mb-4">Welcome to Testify!</h2>
     <p className="text-muted">
       These terms and conditions outline the rules and regulations for the use
       of <strong>Company Name's</strong> Website, located at Website.com. By

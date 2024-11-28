@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
 import "./customcursor.css"
+
+import React, { useEffect, useState } from 'react'
+
 import { useLocation } from 'react-router-dom';
 
 const CustomCursor = () => {
@@ -10,7 +12,7 @@ const CustomCursor = () => {
 
   useEffect(() => {
     // Show cursor only on specific routes
-    const allowedRoutes = ["/", "/about", "/features", "/contact", "/login", "/register", "/termsandPolicy", "/resetpassword",
+    const allowedRoutes = ["/", "/about", "/features", "/contact", "/login", "/register", "/termsPolicy", "/resetpassword",
       "/createpassword"
     ]; // Add your desired routes
     setIsVisible(allowedRoutes.includes(location.pathname));

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { FaUserAlt,FaPhoneAlt, FaEnvelope  } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import video from "../Image/Contact Us (1).mp4"
-import { toast } from 'react-toastify';
 import "../css/Contact.css"
 
+import { FaEnvelope, FaPhoneAlt, FaUserAlt } from "react-icons/fa";
+import React, { useState } from 'react';
+
+import { MdEmail } from "react-icons/md";
+import { toast } from 'react-toastify';
+import video from "../Image/Contact Us (1).mp4"
 
 export default function Contact() {
   const [contactDetail, setContactDetail] = useState({

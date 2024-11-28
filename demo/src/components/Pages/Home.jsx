@@ -1,14 +1,13 @@
-import { useContext } from 'react';
-import { Modal} from 'react-bootstrap';
-import { NavLink } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-import SignupPage from './SignupPage';
-import {Fade} from "react-awesome-reveal"
-import video1 from "../Image/home1.mp4"
-import { Context } from '../Context/Context';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "../css/home.css"
 
-
+import { Context } from '../Context/Context';
+import {Fade} from "react-awesome-reveal"
+import { Modal } from 'react-bootstrap';
+import { NavLink } from "react-router-dom";
+import SignupPage from './SignupPage';
+import { useContext } from 'react';
+import video1 from "../Image/home1.mp4"
 
 function HomePage() {
  const {openSignup, setOpenSignup,show,setShow} = useContext(Context)
@@ -37,7 +36,7 @@ function HomePage() {
             <h2>Test <span>Smarter</span>, Not <span>Harder</span></h2>
           
             <p className='para'>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, id. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, cumque.
+            Lorem, ipsum dolor sit amat consectetur adipisicing elia. Libero, id. Lorem ipsum dolor sit, abet consectetur adipisicing edit. Molesting, cumae.
             </p>
             
           <NavLink to="register" onClick={handlePopup} className="button">
