@@ -6,7 +6,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import About from "./components/pages/About.jsx";
 import Contact from "./components/pages/Contact.jsx";
 import { Context } from "./components/Context/Context.jsx";
-import Cursor from "./Cursor.jsx";
+import Cursor from "./components/layout/Cursor.jsx";
 import Features from "./components/pages/Features.jsx";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";

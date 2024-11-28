@@ -1,4 +1,4 @@
-import "./customcursor.css"
+import "../css/customcursor.css"
 
 import React, { useEffect, useState } from 'react'
 
