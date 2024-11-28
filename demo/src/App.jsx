@@ -6,7 +6,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import About from "./components/pages/About.jsx";
 import Contact from "./components/pages/Contact.jsx";
 import { Context } from "./components/Context/Context.jsx";
-import CustomeCursor from "./CustomeCursor.jsx";
+import Cursor from "./Cursor.jsx";
 import Features from "./components/pages/Features.jsx";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
@@ -24,7 +24,7 @@ function App() {
     <>
       <Router future={{ v7_startTransition: true }}>
         <Header />
-        <CustomeCursor/> 
+        <Cursor/> 
         <div className={`main-layout ${show ? "blurred" : ""}`}>
         <Routes>
           <Route path="/" element={<MainLayout/>}>

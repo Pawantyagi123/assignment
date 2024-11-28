@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 import { useLocation } from 'react-router-dom';
 
-const CustomCursor = () => {
+const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const location = useLocation(); // Get the current location
@@ -80,4 +80,4 @@ const CustomCursor = () => {
   );
 };
 
-export default CustomCursor;
+export default Cursor;
