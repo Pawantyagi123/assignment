@@ -3,7 +3,7 @@ import { FaUserAlt,FaPhoneAlt, FaEnvelope  } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import video from "../Image/Contact Us (1).mp4"
 import { toast } from 'react-toastify';
-
+import "../css/Contact.css"
 
 
 export default function Contact() {

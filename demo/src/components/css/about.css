@@ -1,0 +1,75 @@
+/* about page start*/
+.about-page {
+    background-color: #000;
+    color: #fff;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+  }
+  
+  .about-text {
+    width: 50%;
+  }
+  /* Heading Section */
+  
+  .about-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .about-text h2 {
+    font-size: 1.5rem;
+    color: #8e2de2;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  /* Image Section */
+  .about-content {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .about-image {
+    overflow: hidden;
+    padding: 10px;
+    width: 350px;
+  }
+  
+  .about-image > img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: fill;
+    overflow: hidden;
+  }
+  
+  /* Button Section */
+  .about-button {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .gif-image {
+    animation: spin 10s linear infinite;
+  }
+  
+  .about-gif {
+    border: none;
+    height: auto;
+  }
+  .about-gif > img {
+    animation: spin 10s linear infinite;
+  }

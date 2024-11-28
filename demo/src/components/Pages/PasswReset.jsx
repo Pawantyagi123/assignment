@@ -34,8 +34,7 @@ const handleSubmit = async(e)=>{
           Reset Your Password
         </h1>
         <p className="mb-4">
-          Forgot password? Please enter your email, and we'll send you a
-          verification link.
+          Forgot password? Please enter your email.
         </p>
         <form className='w-100' onSubmit={handleSubmit}>
           <div className='input-group mb-3'>
@@ -57,7 +56,6 @@ const handleSubmit = async(e)=>{
             type="submit"
             className="btn btn-block"
             style={{
-              width: "100%",
               padding: "10px",
               fontSize: "16px",
               fontWeight: "600",

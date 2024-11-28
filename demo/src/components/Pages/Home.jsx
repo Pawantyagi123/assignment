@@ -1,12 +1,13 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Modal} from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import SignupPage from './SignupPage';
 import {Fade} from "react-awesome-reveal"
-import video from "../Image/video.mp4"
 import video1 from "../Image/home1.mp4"
 import { Context } from '../Context/Context';
+import "../css/home.css"
+
 
 
 function HomePage() {
@@ -20,12 +21,12 @@ function HomePage() {
     <>
    <div className="home">
       {/* Video background */}
-       <div className="video-background">
+       {/* <div className="video-background">
         <video autoPlay loop muted className="background-video">
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div> 
+      </div>  */}
       
 
       {/* Main Content */}

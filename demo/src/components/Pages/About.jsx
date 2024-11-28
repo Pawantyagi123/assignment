@@ -1,4 +1,5 @@
 import React from 'react'
+import "../css/about.css"
 import gif from "../Image//gif2.gif"
 import image from "../Image/about-image.avif"
 export default function About() {

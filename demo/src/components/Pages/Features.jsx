@@ -1,5 +1,6 @@
 import React from "react";
 import Marquee from 'react-fast-marquee';
+import "../css/feature.css"
 
 export default function Features() {
   const features = [

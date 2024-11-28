@@ -1,0 +1,54 @@
+/* Features section start */
+
+.features {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background: black;
+    height: auto;
+    width: 100%;
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings: "ROND" 0;
+  }
+  
+  .features h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #00aced;
+  }
+  
+  .marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px;
+    background: linear-gradient(
+      40deg,
+      rgba(0, 0, 0, 0.388),
+      rgba(255, 255, 255, 0.382)
+    );
+  }
+  
+  .feature-item {
+    display: inline-block;
+    margin-right: 30px;
+    text-align: center;
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+    margin-right: 10px;
+  }
+  
+  .feature-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+    opacity: 0.4;
+  }
+  
+  .feature-text:hover {
+    opacity: 1;
+    cursor: pointer;
+  }

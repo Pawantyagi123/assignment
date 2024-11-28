@@ -1,4 +1,5 @@
 import React from 'react';
+import "../css/price.css"
 
 export default function PricePage() {
   return (
