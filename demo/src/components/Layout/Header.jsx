@@ -1,14 +1,16 @@
-import { NavLink } from "react-router-dom";
-import LoginPage from "../pages/LoginPage";
-import { useContext, useState, useEffect } from "react";
-import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../Css/header.css"
+
+import { useContext, useEffect, useState } from "react";
+
 import { Context } from "../Context/Context";
-import logo from "../Image/logo.png";
+import { FaChevronDown } from "react-icons/fa";
+import LoginPage from "../pages/LoginPage";
+import { Modal } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import { RxCross1 } from "react-icons/rx";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FaChevronDown } from "react-icons/fa";
-import "../Css/header.css"
+import logo from "../Image/logo.webp";
 
 export default function Header() {
   const { openLogin, setOpenLogin,show, setShow } = useContext(Context);

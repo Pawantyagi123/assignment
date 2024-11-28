@@ -1,11 +1,13 @@
+import "../css/signupLogin.css"
+
 import React from 'react'
 import gif from "../Image/robot.gif"
-import logo from "../Image/logo.png"
+import logo from "../Image/logo.webp"
 
 export default function SignupPoster() {
   return (
     <>
-    <div className='d-flex justify-content-center align-items-center flex-column gap-2 w-100'>
+    <div>
       <img src={logo} alt="logo" style={{width:"100px", height: "100px",borderRadius: "50%"}}/>
           <h2 className="mb-3 text-center fs-4">Welcome To Testify*</h2>
           </div>

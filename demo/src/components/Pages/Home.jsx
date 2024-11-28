@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../css/home.css"
+import "../css/home.css";
 
 import { Context } from '../Context/Context';
 import {Fade} from "react-awesome-reveal"

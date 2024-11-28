@@ -1,19 +1,22 @@
-import React, { useContext, useState } from "react";
-import axios from "axios";
-import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import "../css/signupLogin.css"
+
+import {FaBuilding, FaCheckCircle, FaLock, FaServicestack, FaTimesCircle, FaUserAlt,} from "react-icons/fa";
+import React, { useContext, useState } from "react";
+
 import { Col } from "react-bootstrap";
-import { toast } from "react-toastify";
-import { NavLink } from "react-router-dom";
-import {FaUserAlt,FaBuilding,FaLock,FaServicestack,FaCheckCircle,FaTimesCircle,} from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { FaLink } from "react-icons/fa6";
 import { Context } from "../Context/Context";
-import signupSchema from "../schema/SignupSchema";
-import SignupPoster from "./SignupPoster";
-import { isValidPhoneNumber } from "libphonenumber-js";
+import { FaLink } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { NavLink } from "react-router-dom";
+import PhoneInput from "react-phone-input-2";
 import { RxCross1 } from "react-icons/rx";
 import Select from "react-select";
+import SignupPoster from "./SignupPoster";
+import axios from "axios";
+import { isValidPhoneNumber } from "libphonenumber-js";
+import signupSchema from "../schema/SignupSchema";
+import { toast } from "react-toastify";
 
 export default function SignupPage() {
   const { openSignup, setOpenSignup, openLogin, setOpenLogin } =
@@ -127,7 +130,7 @@ export default function SignupPage() {
     try {
       console.log(formData);
       setOpenSignup(false);
-      toast.success("Register Succesfull");
+      toast.success("Register Successfully");
     } catch (err) {
       const validationErrors = {};
       err.inner.forEach((error) => {
@@ -135,7 +138,7 @@ export default function SignupPage() {
       });
       console.log(validationErrors);
       setErrors(validationErrors);
-      toast.error("Some error is occured");
+      toast.error("Some error is occurred");
     }
   };
 
@@ -151,7 +154,7 @@ export default function SignupPage() {
               <RxCross1 className="fs-3 text-white" />
             </button>
           </div>
-          <div className="signup-page">
+          <div className="signup-page d-flex">
             <div  className="signup p-4 text-white">
               <SignupPoster />
             </div>
@@ -470,7 +473,7 @@ export default function SignupPage() {
                       >
                         I agree to the{" "}
                         <NavLink
-                          to={"/termsandPolicy"}
+                          to={"/termsPolicy"}
                           className="text-primary"
                         >
                           Terms and Policy

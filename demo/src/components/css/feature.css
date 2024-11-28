@@ -11,12 +11,10 @@
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;
-    font-variation-settings: "ROND" 0;
   }
   
-  .features h1 {
+   h1 {
     margin-bottom: 20px;
-    font-size: 2rem;
     color: #00aced;
   }
   
@@ -31,12 +29,7 @@
     );
   }
   
-  .feature-item {
-    display: inline-block;
-    margin-right: 30px;
-    text-align: center;
-  }
-  
+
   .feature-icon {
     font-size: 2rem;
     margin-right: 10px;
@@ -44,7 +37,7 @@
   
   .feature-text {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     opacity: 0.4;
   }
   

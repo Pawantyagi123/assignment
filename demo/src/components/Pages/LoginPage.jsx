@@ -1,3 +1,5 @@
+import "../css/signupLogin.css"
+
 import React, { useContext, useState } from "react";
 
 import { Context } from "../Context/Context";
@@ -7,7 +9,7 @@ import { NavLink } from "react-router-dom";
 import { RxCross1 } from "react-icons/rx";
 import axios from "axios";
 import image from "../Image/login.png";
-import logo from "../Image/logo.png";
+import logo from "../Image/logo.webp";
 import { toast } from "react-toastify";
 
 export default function LoginPage() {

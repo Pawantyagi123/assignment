@@ -9,99 +9,117 @@
     height: 80vh;
     gap: 20px;
     background-color: #000;
-    /* box-shadow: 
+    box-shadow: 
         inset 0px -10px 20px rgba(87, 72, 197, 0.7), 
         0px 0px 50px rgba(87, 72, 197, 0.5), 
-        0px 10px 15px rgba(0, 0, 0, 0.3); */
+        0px 10px 15px rgba(0, 0, 0, 0.3);
+          
+ & h1 {
+  font-size: 5rem;
+  box-shadow: inset 0px 0px 40px rgb(106, 135, 193);
+  letter-spacing: 2px;
+  border: none;
+  color: transparent;
+  background: linear-gradient(to right, red, rgb(0, 115, 255));
+  border-radius: 5px;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  padding: 5px 10px;
+  font-style: normal;
+  background-clip: text;
+}
+
+ h2 {
+  font-family: "Playfair Display";
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.para {
+  font-size: 1.2rem;
+  color: white;
+}
+  
+.button {
+  color: white;
+  height: 50px;
+  width: 150px;
+  background: linear-gradient(90deg, rgb(137, 139, 120) 0%, rgb(200, 110, 193) 33%, rgba(0,134,255,1) 100%);
+  border: none;
+  border-radius: 10px;
+  font-size: 25px;
+  text-decoration: none;
+
+}
+
+.button:hover {
+  background: linear-gradient(90deg,rgb(200, 110, 193) 0%, rgba(0,134,255,1) 33%, rgb(137, 139, 120) 100%);
+  border-color: white;
+}
+
   }
 
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   
-  
-  .home h1 {
-    font-size: 5rem;
-    box-shadow: inset 0px 0px 40px rgb(106, 135, 193);
-    letter-spacing: 2px;
-    border: none;
-    color: transparent;
-    background: linear-gradient(to right, red, rgb(0, 115, 255));
-    border-radius: 5px;
-    font-family: "Playfair Display", serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    padding: 5px 10px;
-    font-style: normal;
-    background-clip: text;
+    & video {
+      max-height: 350px;
+    }
   }
-  
-  .home h2 {
-    font-family: "Playfair Display";
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-  .para {
-    font-size: 1.2rem;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(175, 40, 40, 0.5);
-    
-  }
-  
-  
-  .button {
-    color: white;
-    height: 50px;
-    width: 150px;
-    background: linear-gradient(90deg, rgb(137, 139, 120) 0%, rgb(200, 110, 193) 33%, rgba(0,134,255,1) 100%);
-    border: none;
-    border-radius: 10px;
-    transition: linear-gradient 1s ease-in-out;
-    font-size: 25px;
-    text-decoration: none;
-  
-  }
-  
-  .button:hover {
-    background: linear-gradient(90deg,rgb(200, 110, 193) 0%, rgba(0,134,255,1) 33%, rgb(137, 139, 120) 100%);
-    border-color: white;
-  }
-  .video-background {
+
+  /* .video-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Keep video behind content */
-  }
-  
+    z-index: -1; 
+  } */
+/*   
   .background-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure video covers the screen */
-  }
+    object-fit: cover;
+  } */
   
-  .text-white {
-    position: relative;
-    z-index: 1; /* Keep text on top of the video */
-  }
   
-  .home > .image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .image > video {
-    max-height: 350px;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
+  @media (max-width: 1000px) {
+    .home {
+      height: auto;
+      flex-wrap: wrap;
+      justify-content: space-around;
     }
-    100% {
-      transform: rotate(360deg);
+    .para {
+      font-size: 0.9rem;
     }
+    .image video {
+      height: auto;
+    }
+   
   }
 
+  @media (max-width: 590px) {
+    .home h1 {
+      font-size: 2.5rem;
+    }
+    .home .button {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      width: 100px;
+    }
+    .image video {
+      height: auto;
+      max-height: 250px;
+    }
+    .para {
+      font-size: 1rem;
+    }
   
+  }
+   
+  
+ 

@@ -1,7 +1,9 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "../Image/logo.png"
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+
+import React from "react";
+import logo from "../Image/logo.webp"
 
 export default function Footer() {
   return (
@@ -12,10 +14,10 @@ export default function Footer() {
           <div className="col-md-4 mb-3">
             <div className="d-flex  align-items-center gap-1">
             <img src={logo} alt="" style={{ width: "70px", height: "70px",borderRadius: "50%" }}/>
-            <h5 className="text-uppercase">Testfy</h5>
+            <h5>Testify</h5>
             </div>
             <p>
-              Testfy is dedicated to providing top-notch AI-driven testing solutions for businesses worldwide.
+              Testify is dedicated to providing top-notch AI-driven testing solutions for businesses worldwide.
             </p>
           </div>
 
@@ -73,7 +75,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center mt-3">
-          <p className="mb-0">&copy; {new Date().getFullYear()} Testfy. All rights reserved.</p>
+          <p className="mb-0">&copy; {new Date().getFullYear()} Testify. All rights reserved.</p>
         </div>
       </div>
     </footer>

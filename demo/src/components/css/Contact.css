@@ -16,11 +16,6 @@
   text-align: center;
 }
 
-@media(max-width:768px){
-  .contact-video-container{
-    display: none;
-  }
-}
 .contact-video {
   object-fit: cover;
   height: auto;
@@ -73,17 +68,9 @@
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .contact-wrapper {
-    flex-direction: column;
-  }
   .contact-video-container,
   .contact-details {
-    flex: none;
+    display: none;
     width: 100%;
   }
-  .contact-video {
-    max-height: 300px;
-  }
 }
-
-  

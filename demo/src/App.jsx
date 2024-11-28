@@ -1,3 +1,5 @@
+import "./components/css/signupLogin.css"
+
 import React, { useContext } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
