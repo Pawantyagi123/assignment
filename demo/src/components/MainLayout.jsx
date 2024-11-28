@@ -1,7 +1,7 @@
-import Home from "./pages/Home";
 import About from "./pages/About";
-import Features from "./pages/Features";
 import Contact from "./pages/Contact";
+import Features from "./pages/Features";
+import Home from "./pages/Home";
 import PricePage from "./pages/PricePage";
 
 export default function MainLayout() {
