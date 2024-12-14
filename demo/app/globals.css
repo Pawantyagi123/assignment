@@ -1,0 +1,25 @@
+body {
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body::-webkit-scrollbar{
+  display: none;
+    width: 10px;
+    background-color: black;
+ }
+
+ .main-layout {
+  transition: filter 0.3s ease-in-out; /* Smooth blur transition */
+  margin: 0; /* Remove potential margins */
+  padding: 0; /* Remove padding */
+  box-shadow: none; /* Prevent any default shadow */
+  border: none; /* Ensure no border */
+}
+
+/* Main Layout - Blurred State */
+.main-layout.blurred {
+  filter: blur(10px); /* Apply blur effect */
+  pointer-events: none; /* Disable interaction with blurred content */
+}

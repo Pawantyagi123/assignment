@@ -1,0 +1,136 @@
+/* Contact Wrapper */
+/* Wrapper Styles */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: linear-gradient(black, rgb(3, 3, 53), #001f3f); /* Navy background */
+    color: white;
+    padding: 2rem;
+  }
+  
+  /* Image Section */
+  .contact-image-container {
+    text-align: center;
+    margin: auto;
+  }
+  
+  .contact-image {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 1rem;
+  }
+  
+  /* Title and Description */
+  .contact-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .contact-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8); /* Slightly brighter */
+  }
+  
+  /* Contact Form Styles */
+  .contact-details {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 1px solid #ffffff67; /* White border around the form */
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: transparent;
+  }
+  
+  /* Form Group */
+  .contact-form .form-group {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .contact-form .form-icon {
+    pointer-events: none;
+    color: #007bff; /* Bootstrap primary color */
+    font-size: 1.25rem;
+  }
+  
+  .contact-form .form-control {
+    flex: 1;
+    border: 1px solid #ffffff; /* White border around input fields */
+    background: transparent; /* Transparent background */
+    color: white; /* White text for input */
+    padding: 0.75rem; /* Space for the icon */
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contact-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* White placeholder text */
+  }
+  
+  .contact-form .form-control:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 5px #007bff; /* Highlight on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  /* Submit Button */
+  .contact-form button {
+    background-color: #007bff; /* Primary color */
+    border: none;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 1rem;
+    margin: 0 auto;
+    display: block;
+    width: 60%; /* Adjust button width */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+  }
+  
+  .contact-form button:focus {
+    outline: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 990px) {
+    .contact-image-container {
+      display: none; /* Hide image on smaller screens */
+    }
+  
+    .contact-details {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact-wrapper {
+      padding: 1.5rem;
+    }
+  
+  }
+  
+  @media (max-width: 480px) {
+  
+  }
